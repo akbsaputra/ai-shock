@@ -15,8 +15,5 @@ Single-page React + TypeScript application that reproduces the AI shock workbook
 
 ## Notes
 
-- Source workbook expected by the model builder:
-  - `C:\Users\akbar\Downloads\AI shock model (11).xlsx`
 - Generated model data:
   - `src/model/modelData.json`
-- `diff countries` sheet is intentionally excluded in v1.
