@@ -86,7 +86,7 @@ describe('App interactions', () => {
   it('switches scenario tabs while preserving shared row labels', () => {
     render(<App />);
 
-    const tabButton = screen.getAllByRole('tab', { name: /High impact \/ High market power/i })[0];
+    const tabButton = screen.getAllByRole('tab', { name: /High impact\s*\/\s*High market power/i })[0];
     fireEvent.click(tabButton);
 
     expect(tabButton).toHaveAttribute('aria-selected', 'true');
