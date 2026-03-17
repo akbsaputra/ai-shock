@@ -119,7 +119,7 @@ describe('App interactions', () => {
     expect(slider).toHaveValue('25');
   });
 
-  it('keeps current tax shares summing to 100 when one share changes', () => {
+  it('allows editing current tax shares independently', () => {
     render(<App />);
     fireEvent.click(screen.getByRole('button', { name: 'Expand all sections' }));
 
@@ -129,11 +129,14 @@ describe('App interactions', () => {
     const laborTaxInput = within(currentTaxSection as HTMLElement).getByRole('spinbutton', {
       name: /Labor income tax number/i,
     });
+    const capitalTaxInput = within(currentTaxSection as HTMLElement).getByRole('spinbutton', {
+      name: /Capital income tax number/i,
+    });
 
     fireEvent.change(laborTaxInput, { target: { value: '50' } });
+    fireEvent.change(capitalTaxInput, { target: { value: '20' } });
 
-    const taxInputs = within(currentTaxSection as HTMLElement).getAllByRole('spinbutton');
-    const total = taxInputs.reduce((sum, input) => sum + Number((input as HTMLInputElement).value), 0);
-    expect(total).toBeCloseTo(100, 6);
+    expect(laborTaxInput).toHaveValue(50);
+    expect(capitalTaxInput).toHaveValue(20);
   });
 });

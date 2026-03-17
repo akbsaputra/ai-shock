@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {
   Bar,
   BarChart,
+  Brush,
   CartesianGrid,
   Line,
   LineChart,
@@ -449,6 +450,13 @@ function ChartCard({ chart }: { chart: ChartViewModel }) {
                   />
                 );
               })}
+              <Brush
+                dataKey="x"
+                height={20}
+                travellerWidth={8}
+                stroke="rgba(31, 41, 55, 0.5)"
+                tickFormatter={(value) => String(value)}
+              />
             </LineChart>
           ) : (
             <BarChart data={chart.data} margin={{ top: 8, right: 6, bottom: 4, left: 0 }}>
@@ -515,6 +523,7 @@ export function ChartsSection({
           <p className="charts-toolbar__legend-note">
             <span>Legend format: impact/market power</span>
             <span>For example, "low/high" means low impact and high market power.</span>
+            <span>Line charts: drag the timeline handles to zoom.</span>
           </p>
           <div className="charts-toolbar__filters">
             <div className="segmented" role="group" aria-label="Impact focus">

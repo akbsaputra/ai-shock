@@ -259,16 +259,62 @@ input {
   }
 }
 
-.soft-warnings {
+.allocation-guidance {
   display: grid;
   gap: 4px;
-  margin-bottom: 10px;
+  grid-column: 1 / -1;
+  margin-bottom: 2px;
   padding: 8px 10px;
   border-radius: var(--radius-md);
   border: 1px solid color-mix(in oklab, var(--amber) 40%, #fff);
   background: color-mix(in oklab, var(--amber) 10%, #fff);
   color: #663a10;
   font-size: 0.75rem;
+}
+
+.allocation-guidance__totals {
+  display: grid;
+  gap: 2px;
+}
+
+.allocation-guidance__total {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Roboto Mono', ui-monospace, monospace;
+}
+
+.allocation-guidance__total--ok {
+  color: var(--teal);
+}
+
+.allocation-guidance__total--off {
+  color: var(--red);
+}
+
+.allocation-guidance__badge {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  line-height: 1;
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
+.allocation-guidance__badge--ok {
+  color: #0f5e5a;
+  background: color-mix(in oklab, var(--teal) 18%, #fff);
+  border: 1px solid color-mix(in oklab, var(--teal) 40%, #fff);
+}
+
+.allocation-guidance__badge--off {
+  color: #7a1f16;
+  background: color-mix(in oklab, var(--red) 16%, #fff);
+  border: 1px solid color-mix(in oklab, var(--red) 40%, #fff);
 }
 
 .assumptions-groups {
@@ -298,6 +344,10 @@ input {
   padding: 10px;
 }
 
+.assumption-group__body--allocation {
+  grid-template-columns: 1fr;
+}
+
 .assumption-row {
   border: 1px solid color-mix(in oklab, var(--line) 80%, #fff);
   border-radius: 10px;
@@ -309,6 +359,10 @@ input {
   grid-column: 1 / -1;
   grid-template-columns: 1fr;
   align-items: start;
+}
+
+.assumption-group--allocation .assumption-row {
+  grid-column: auto;
 }
 
 .assumption-row--half {
@@ -360,6 +414,15 @@ input {
   grid-template-columns: 56px minmax(0, 1fr) auto;
   align-items: center;
   column-gap: 8px;
+}
+
+.assumption-group--allocation .assumption-value--labeled {
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  column-gap: 12px;
+}
+
+.assumption-group--allocation .assumption-value__label {
+  padding-right: 2px;
 }
 
 .assumption-value__label {
@@ -868,6 +931,10 @@ input {
     grid-template-columns: 1fr;
   }
 
+  .assumption-group__body--allocation {
+    grid-template-columns: 1fr;
+  }
+
   .assumption-row {
     grid-column: 1 / -1;
     grid-template-columns: 1fr;
@@ -883,6 +950,11 @@ input {
 
   .assumption-value--labeled {
     grid-template-columns: 48px minmax(0, 1fr) auto;
+  }
+
+  .assumption-group--allocation .assumption-value--labeled {
+    grid-template-columns: 90px minmax(0, 1fr) auto;
+    column-gap: 10px;
   }
 
   .assumption-value__number {

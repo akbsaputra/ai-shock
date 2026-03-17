@@ -17,6 +17,7 @@ vi.mock('recharts', () => ({
   Tooltip: mockComponent('recharts-tooltip'),
   Customized: mockComponent('recharts-customized'),
   Legend: mockComponent('recharts-legend'),
+  Brush: mockComponent('recharts-brush'),
   Line: mockComponent('recharts-line'),
   LabelList: mockComponent('recharts-label-list'),
   Bar: mockComponent('recharts-bar'),

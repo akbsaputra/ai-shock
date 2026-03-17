@@ -1,9 +1,6 @@
 import type { ReactNode } from 'react';
 import { useEffect, useMemo, useState } from 'react';
-import type {
-  AssumptionSheetSectionView,
-  AssumptionSheetVariantView,
-} from '../model/selectors';
+import type { AssumptionSheetSectionView, AssumptionSheetVariantView } from '../model/selectors';
 import { formatValue } from '../utils/format';
 
 interface AssumptionControlView {
@@ -23,9 +20,8 @@ interface AssumptionsSectionProps {
 const HALF_WIDTH_ROW_LABELS = new Set([
   'Baseline labor tax (exposed sector)',
   'Baseline labor tax (non-exposed sector)',
-  'Baseline consumption tax (linked to exposed sector)',
-  'Baseline consumption tax (other sources)',
 ]);
+const ALLOCATION_SECTION_ID = 'assumption-sheet-section-22';
 
 function IconButton({
   label,
@@ -131,7 +127,7 @@ function getInputSuffix(variant: AssumptionSheetVariantView): string | null {
 }
 
 function getDisplayInputValue(value: number): string {
-  return value.toFixed(1);
+  return String(Number(value.toFixed(3)));
 }
 
 function getInputLabel(rowLabel: string, variantLabel: string): string {
@@ -140,6 +136,36 @@ function getInputLabel(rowLabel: string, variantLabel: string): string {
 
 function shouldShowVariantLabel(variantLabel: string, totalVariants: number): boolean {
   return totalVariants > 1 || variantLabel !== 'Value';
+}
+
+function rowClassNames(label: string): string {
+  const classes = ['assumption-row'];
+  if (HALF_WIDTH_ROW_LABELS.has(label)) {
+    classes.push('assumption-row--half');
+  }
+  return classes.join(' ');
+}
+
+function valueClassNames(totalVariants: number): string {
+  const classes = ['assumption-row__values'];
+  if (totalVariants > 1) {
+    classes.push('assumption-row__values--multi');
+  }
+  return classes.join(' ');
+}
+
+function sectionClassNames(sectionId: string): string {
+  if (sectionId === ALLOCATION_SECTION_ID) {
+    return 'assumption-group assumption-group--allocation';
+  }
+  return 'assumption-group';
+}
+
+function sectionBodyClassNames(sectionId: string): string {
+  if (sectionId === ALLOCATION_SECTION_ID) {
+    return 'assumption-group__body assumption-group__body--allocation';
+  }
+  return 'assumption-group__body';
 }
 
 function AssumptionValueCell({
@@ -153,6 +179,7 @@ function AssumptionValueCell({
   totalVariants: number;
   onControlChange: (sheetCell: string, value: number) => void;
 }) {
+  const [draftValue, setDraftValue] = useState<string | null>(null);
   const inputLabel = getInputLabel(rowLabel, variant.label);
   const showVariantLabel = shouldShowVariantLabel(variant.label, totalVariants);
 
@@ -170,7 +197,26 @@ function AssumptionValueCell({
   }
 
   const displayValue = toDisplayValue(variant, variant.value);
+  const inputValue = draftValue ?? getDisplayInputValue(displayValue);
+  const minDisplayValue = variant.min === null ? undefined : toDisplayValue(variant, variant.min);
+  const maxDisplayValue = variant.max === null ? undefined : toDisplayValue(variant, variant.max);
   const suffix = getInputSuffix(variant);
+
+  function handleNumberChange(rawValue: string): void {
+    setDraftValue(rawValue);
+    const parsed = Number(rawValue);
+    if (Number.isFinite(parsed)) {
+      onControlChange(variant.sheetCell, toModelValue(variant, parsed));
+    }
+  }
+
+  function commitDraft(rawValue: string): void {
+    const parsed = Number(rawValue);
+    if (Number.isFinite(parsed)) {
+      onControlChange(variant.sheetCell, toModelValue(variant, parsed));
+    }
+    setDraftValue(null);
+  }
 
   return (
     <div
@@ -183,8 +229,8 @@ function AssumptionValueCell({
         <input
           aria-label={`${inputLabel} slider`}
           type="range"
-          min={variant.min === null ? undefined : toDisplayValue(variant, variant.min)}
-          max={variant.max === null ? undefined : toDisplayValue(variant, variant.max)}
+          min={minDisplayValue}
+          max={maxDisplayValue}
           step={getDisplayStep(variant)}
           value={displayValue}
           onChange={(event) => onControlChange(variant.sheetCell, toModelValue(variant, Number(event.target.value)))}
@@ -195,11 +241,19 @@ function AssumptionValueCell({
           aria-label={`${inputLabel} number`}
           type="number"
           inputMode="decimal"
-          min={variant.min === null ? undefined : toDisplayValue(variant, variant.min)}
-          max={variant.max === null ? undefined : toDisplayValue(variant, variant.max)}
+          min={minDisplayValue}
+          max={maxDisplayValue}
           step={getDisplayStep(variant)}
-          value={getDisplayInputValue(displayValue)}
-          onChange={(event) => onControlChange(variant.sheetCell, toModelValue(variant, Number(event.target.value)))}
+          value={inputValue}
+          onFocus={() => setDraftValue(getDisplayInputValue(displayValue))}
+          onChange={(event) => handleNumberChange(event.target.value)}
+          onBlur={(event) => commitDraft(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              commitDraft((event.target as HTMLInputElement).value);
+              (event.target as HTMLInputElement).blur();
+            }
+          }}
         />
         {suffix && <span className="assumption-value__suffix">{suffix}</span>}
       </label>
@@ -207,7 +261,7 @@ function AssumptionValueCell({
   );
 }
 
-function SoftWarnings({ controls }: { controls: AssumptionControlView[] }) {
+function AllocationGuidance({ controls }: { controls: AssumptionControlView[] }) {
   const byCell = useMemo(() => {
     const map = new Map<string, number>();
     controls.forEach((control) => {
@@ -218,24 +272,32 @@ function SoftWarnings({ controls }: { controls: AssumptionControlView[] }) {
 
   const lowSum = (byCell.get('C23') ?? 0) + (byCell.get('C24') ?? 0) + (byCell.get('C25') ?? 0);
   const highSum = (byCell.get('D23') ?? 0) + (byCell.get('D24') ?? 0) + (byCell.get('D25') ?? 0);
-
-  const warnings: string[] = [];
-  if (Math.abs(lowSum - 1) > 0.001) {
-    warnings.push(`Low market power shares sum to ${(lowSum * 100).toFixed(1)}% (target: 100%).`);
-  }
-  if (Math.abs(highSum - 1) > 0.001) {
-    warnings.push(`High market power shares sum to ${(highSum * 100).toFixed(1)}% (target: 100%).`);
-  }
-
-  if (warnings.length === 0) {
-    return null;
-  }
+  const lowOffTarget = Math.abs(lowSum - 1) > 0.001;
+  const highOffTarget = Math.abs(highSum - 1) > 0.001;
 
   return (
-    <div className="soft-warnings" role="status">
-      {warnings.map((warning) => (
-        <p key={warning}>{warning}</p>
-      ))}
+    <div className="allocation-guidance" role="note">
+      <p>For each market power assumption, domestic, consumer, and foreign/cost shares should sum to 100%.</p>
+      <div className="allocation-guidance__totals">
+        <p className={lowOffTarget ? 'allocation-guidance__total allocation-guidance__total--off' : 'allocation-guidance__total allocation-guidance__total--ok'}>
+          <span
+            className={lowOffTarget ? 'allocation-guidance__badge allocation-guidance__badge--off' : 'allocation-guidance__badge allocation-guidance__badge--ok'}
+            aria-hidden="true"
+          >
+            {lowOffTarget ? 'x' : '✓'}
+          </span>
+          Low market power total: {(lowSum * 100).toFixed(1)}%
+        </p>
+        <p className={highOffTarget ? 'allocation-guidance__total allocation-guidance__total--off' : 'allocation-guidance__total allocation-guidance__total--ok'}>
+          <span
+            className={highOffTarget ? 'allocation-guidance__badge allocation-guidance__badge--off' : 'allocation-guidance__badge allocation-guidance__badge--ok'}
+            aria-hidden="true"
+          >
+            {highOffTarget ? 'x' : '✓'}
+          </span>
+          High market power total: {(highSum * 100).toFixed(1)}%
+        </p>
+      </div>
     </div>
   );
 }
@@ -307,49 +369,44 @@ export function AssumptionsSection({
         </div>
       </div>
 
-      <SoftWarnings controls={controls} />
-
       <div className="assumptions-groups">
-        {sections.map((section) => (
-          <details key={section.id} open={openSections.has(section.id)} className="assumption-group">
-            <summary
-              onClick={(event) => {
-                event.preventDefault();
-                toggleSection(section.id);
-              }}
-            >
-              {section.title}
-            </summary>
-            <div className="assumption-group__body">
-              {section.rows.map((row) => (
-                <article
-                  key={row.id}
-                  className={`assumption-row ${HALF_WIDTH_ROW_LABELS.has(row.label) ? 'assumption-row--half' : ''}`}
-                >
-                  <div className="assumption-row__main">
-                    <h4>{row.label}</h4>
-                    {row.additionalInfo ? <p className="assumption-row__info">{row.additionalInfo}</p> : null}
-                  </div>
-                  <div
-                    className={`assumption-row__values ${
-                      row.variants.length > 1 ? 'assumption-row__values--multi' : ''
-                    }`}
-                  >
-                    {row.variants.map((variant) => (
-                      <AssumptionValueCell
-                        key={variant.id}
-                        rowLabel={row.label}
-                        variant={variant}
-                        totalVariants={row.variants.length}
-                        onControlChange={onControlChange}
-                      />
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </details>
-        ))}
+        {sections.map((section) => {
+          const isAllocationSection = section.id === ALLOCATION_SECTION_ID;
+          return (
+            <details key={section.id} open={openSections.has(section.id)} className={sectionClassNames(section.id)}>
+              <summary
+                onClick={(event) => {
+                  event.preventDefault();
+                  toggleSection(section.id);
+                }}
+              >
+                {section.title}
+              </summary>
+              <div className={sectionBodyClassNames(section.id)}>
+                {isAllocationSection ? <AllocationGuidance controls={controls} /> : null}
+                {section.rows.map((row) => (
+                  <article key={row.id} className={rowClassNames(row.label)}>
+                    <div className="assumption-row__main">
+                      <h4>{row.label}</h4>
+                      {row.additionalInfo ? <p className="assumption-row__info">{row.additionalInfo}</p> : null}
+                    </div>
+                    <div className={valueClassNames(row.variants.length)}>
+                      {row.variants.map((variant) => (
+                        <AssumptionValueCell
+                          key={variant.id}
+                          rowLabel={row.label}
+                          variant={variant}
+                          totalVariants={row.variants.length}
+                          onControlChange={onControlChange}
+                        />
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </details>
+          );
+        })}
       </div>
     </section>
   );

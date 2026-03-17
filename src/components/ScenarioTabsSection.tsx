@@ -1,6 +1,6 @@
 import { SCENARIO_KEYS, SCENARIO_LABELS } from '../model/constants';
 import type { ScenarioKey, ScenarioTableRow } from '../model/types';
-import { formatPercent, formatValue } from '../utils/format';
+import { formatValue } from '../utils/format';
 
 interface ScenarioTabsSectionProps {
   activeScenario: ScenarioKey;
@@ -56,20 +56,9 @@ export function ScenarioTabsSection({
                 `}
               >
                 <td className="sticky-col">{row.label}</td>
-                {row.values.map((value, index) => {
-                  const isTotalColumn = index === row.values.length - 1;
-                  const showDelta = isTotalColumn && row.deltaVsBaselineTotal !== null;
-                  return (
-                    <td key={`scenario-cell-${row.row}-${index}`}>
-                      {formatValue(value)}
-                      {showDelta && (
-                        <span className={`delta-badge ${row.deltaVsBaselineTotal! < 0 ? 'delta-badge--down' : 'delta-badge--up'}`}>
-                          {formatPercent(row.deltaVsBaselineTotal!)}
-                        </span>
-                      )}
-                    </td>
-                  );
-                })}
+                {row.values.map((value, index) => (
+                  <td key={`scenario-cell-${row.row}-${index}`}>{formatValue(value)}</td>
+                ))}
               </tr>
             ))}
           </tbody>

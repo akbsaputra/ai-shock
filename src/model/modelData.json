@@ -3,7 +3,7 @@
     "title": "AI Shock Fiscal Simulator",
     "generatedAt": "2026-02-26T13:38:38.034731Z",
     "workbookSource": "c:\\Users\\akbar\\Downloads\\AI shock model (11).xlsx",
-    "workbookLastModified": "2026-02-26T07:54:41.622341Z",
+    "workbookLastModified": "2026-03-17",
     "includedSheets": [
       "assumptions",
       "summary",
@@ -110,12 +110,12 @@
           null
         ],
         [
-          "Capital income tax (corporate income tax + capital income)",
+          "Capital income tax",
           "corp_tax",
           13.75,
           null,
           null,
-          null,
+          "corporate income tax + capital income",
           null,
           null,
           null,
@@ -36632,12 +36632,12 @@
           null
         ],
         [
-          "Capital income tax (corporate income tax + capital income)",
+          "Capital income tax",
           "corp_tax",
           13.75,
           null,
           null,
-          null,
+          "corporate income tax + capital income",
           null,
           null,
           null,

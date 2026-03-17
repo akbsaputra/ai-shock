@@ -19,7 +19,15 @@ const HIGH_MARKET_SCENARIOS: ScenarioKey[] = ['low-high', 'med-high', 'high-high
 const LOW_IMPACT_SCENARIOS: ScenarioKey[] = ['low-low', 'low-high'];
 const MED_IMPACT_SCENARIOS: ScenarioKey[] = ['med-low', 'med-high'];
 const HIGH_IMPACT_SCENARIOS: ScenarioKey[] = ['high-low', 'high-high'];
-const ASSUMPTION_SECTION_SPECS = [
+interface AssumptionSectionSpec {
+  titleRow: number;
+  startRow: number;
+  endRow: number;
+  columns: string[];
+  variantLabels?: string[];
+}
+
+const ASSUMPTION_SECTION_SPECS: AssumptionSectionSpec[] = [
   { titleRow: 3, startRow: 4, endRow: 8, columns: ['C'], variantLabels: ['Value'] },
   { titleRow: 9, startRow: 10, endRow: 12, columns: ['C'], variantLabels: ['Value'] },
   { titleRow: 13, startRow: 14, endRow: 17, columns: ['C', 'D', 'E'] },
@@ -28,7 +36,7 @@ const ASSUMPTION_SECTION_SPECS = [
   { titleRow: 26, startRow: 27, endRow: 27, columns: ['C'], variantLabels: ['Value'] },
   { titleRow: 28, startRow: 29, endRow: 35, columns: ['C'], variantLabels: ['Value'] },
   { titleRow: 36, startRow: 37, endRow: 39, columns: ['C'], variantLabels: ['Value'] },
-] as const;
+];
 
 type AssumptionInputFormat = 'auto' | 'percent' | 'points' | 'number';
 
@@ -57,6 +65,12 @@ export interface AssumptionSheetSectionView {
   variantLabels: string[];
   rows: AssumptionSheetRowView[];
 }
+
+const ASSUMPTION_SECTION_IDS = {
+  laborBenefits: 'assumption-sheet-section-18',
+  allocation: 'assumption-sheet-section-22',
+  laborTaxRates: 'assumption-sheet-section-36',
+} as const;
 
 function toNumber(value: number | string | boolean | null): number {
   const parsed = cellToNumber(value);
@@ -121,7 +135,7 @@ export function selectAssumptionValues(engine: ModelEngine): {
   derived: Array<{
     id: string;
     sheetCell: string;
-    value: number | string | null;
+    value: number | string | boolean | null;
     label: string | null;
     variable: string | null;
     additionalInfo: string | null;
@@ -159,8 +173,7 @@ export function selectAssumptionValues(engine: ModelEngine): {
 export function selectAssumptionSheet(engine: ModelEngine): AssumptionSheetSectionView[] {
   const controlsByCell = new Map(engine.data.assumptions.controls.map((control) => [control.sheetCell, control]));
   const derivedByCell = new Map(engine.data.assumptions.derived.map((field) => [field.sheetCell, field]));
-
-  return ASSUMPTION_SECTION_SPECS.map((section) => {
+  const sections = ASSUMPTION_SECTION_SPECS.map((section) => {
     const title = toLabel(engine.getCell('assumptions', `A${section.titleRow}`));
     const variantLabels = section.columns.map((column, index) => {
       if (section.variantLabels?.[index]) {
@@ -220,6 +233,113 @@ export function selectAssumptionSheet(engine: ModelEngine): AssumptionSheetSecti
       rows,
     };
   });
+
+  return mergeLaborTaxAndBenefitsSections(
+    sections
+      .map((section) => normalizeAssumptionSection(section))
+      .filter((section) => section.rows.length > 0),
+  );
+}
+
+function getAssumptionRowNumber(row: AssumptionSheetRowView): number | null {
+  const firstCell = row.variants[0]?.sheetCell ?? '';
+  const match = firstCell.match(/[A-Z]+(\d+)/);
+  if (!match) {
+    return null;
+  }
+  return Number(match[1]);
+}
+
+function applyAssumptionRowOverrides(row: AssumptionSheetRowView): AssumptionSheetRowView {
+  const rowNumber = getAssumptionRowNumber(row);
+  if (rowNumber === 19) {
+    return {
+      ...row,
+    };
+  }
+  if (rowNumber === 35) {
+    return {
+      ...row,
+      label: 'Consumption tax sensitivity to exposed wage loss',
+      additionalInfo: 'Higher values mean larger consumption-tax declines from exposed wage loss.',
+    };
+  }
+  return row;
+}
+
+function buildAllocationRows(rows: AssumptionSheetRowView[]): AssumptionSheetRowView[] {
+  const lowVariants: AssumptionSheetVariantView[] = [];
+  const highVariants: AssumptionSheetVariantView[] = [];
+
+  rows.forEach((row) => {
+    const [lowVariant, highVariant] = row.variants;
+    if (lowVariant) {
+      lowVariants.push({
+        ...lowVariant,
+        id: `${lowVariant.id}-grouped-low`,
+        label: row.label,
+      });
+    }
+    if (highVariant) {
+      highVariants.push({
+        ...highVariant,
+        id: `${highVariant.id}-grouped-high`,
+        label: row.label,
+      });
+    }
+  });
+
+  const groupedRows: AssumptionSheetRowView[] = [
+    {
+      id: 'assumption-sheet-row-allocation-low',
+      label: 'Low market power',
+      additionalInfo: null,
+      variants: lowVariants,
+    },
+    {
+      id: 'assumption-sheet-row-allocation-high',
+      label: 'High market power',
+      additionalInfo: null,
+      variants: highVariants,
+    },
+  ];
+
+  return groupedRows.filter((row) => row.variants.length > 0);
+}
+
+function normalizeAssumptionSection(section: AssumptionSheetSectionView): AssumptionSheetSectionView {
+  let rows = section.rows
+    .filter((row) => {
+      const rowNumber = getAssumptionRowNumber(row);
+      return rowNumber !== 33 && rowNumber !== 34;
+    })
+    .map((row) => applyAssumptionRowOverrides(row));
+
+  if (section.id === ASSUMPTION_SECTION_IDS.allocation) {
+    rows = buildAllocationRows(rows);
+  }
+
+  return {
+    ...section,
+    rows,
+  };
+}
+
+function mergeLaborTaxAndBenefitsSections(sections: AssumptionSheetSectionView[]): AssumptionSheetSectionView[] {
+  const laborTaxRates = sections.find((section) => section.id === ASSUMPTION_SECTION_IDS.laborTaxRates);
+
+  return sections
+    .filter((section) => section.id !== ASSUMPTION_SECTION_IDS.laborTaxRates)
+    .map((section) => {
+      if (section.id !== ASSUMPTION_SECTION_IDS.laborBenefits) {
+        return section;
+      }
+      return {
+        ...section,
+        title: 'Labor tax rates and benefits',
+        rows: laborTaxRates ? [...section.rows, ...laborTaxRates.rows] : section.rows,
+      };
+      });
 }
 
 export function selectSummaryGroups(
@@ -379,8 +499,9 @@ export function selectCharts(
         role: seriesSpec.role,
       });
 
-      if (typeof seriesSpec.constantValue === 'number') {
-        ySeriesValues[seriesSpec.id] = xValues.map(() => seriesSpec.constantValue);
+      const constantValue = seriesSpec.constantValue;
+      if (typeof constantValue === 'number') {
+        ySeriesValues[seriesSpec.id] = xValues.map(() => constantValue);
       } else if (seriesSpec.valuesRange) {
         ySeriesValues[seriesSpec.id] = engine.getRange(spec.sheet, seriesSpec.valuesRange).flat();
       } else {

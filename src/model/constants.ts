@@ -22,14 +22,14 @@ export const SCENARIO_COLORS: Record<ScenarioKey, string> = {
   'low-low': '#60A5FA',
   'med-low': '#2563EB',
   'high-low': '#1E3A8A',
-  'low-high': '#C08A4B',
-  'med-high': '#9A6125',
-  'high-high': '#6F3F1C',
+  'low-high': '#FCA5A5',
+  'med-high': '#EF4444',
+  'high-high': '#991B1B',
 };
 
 export const BASELINE_COLOR = '#15803D';
 
 export const CHANGES_SERIES_COLORS: Record<string, string> = {
   'total-change': '#2563EB',
-  'net-change': '#9A6125',
+  'net-change': '#DC2626',
 };

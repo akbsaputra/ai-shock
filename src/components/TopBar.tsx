@@ -4,12 +4,10 @@ interface TopBarProps {
 
 function formatTimestamp(isoDate: string): string {
   const date = new Date(isoDate);
-  return date.toLocaleString(undefined, {
+  return date.toLocaleDateString(undefined, {
     year: 'numeric',
     month: 'short',
     day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
   });
 }
 

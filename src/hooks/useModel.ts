@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'react';
-import { cellToNumber, createModelEngine } from '../model/engine';
+import { createModelEngine } from '../model/engine';
 import { modelData } from '../model/modelData';
 import {
   selectAssumptionSheet,
@@ -13,11 +13,6 @@ import {
 import type { ImpactFocus, MarketPowerFocus, ScenarioKey } from '../model/types';
 
 const STORAGE_KEY = 'ai-shock-show-summary-table';
-const CURRENT_TAX_SHARE_CELLS = ['C5', 'C6', 'C7', 'C8'] as const;
-
-function roundToTenths(value: number): number {
-  return Math.round(value * 10) / 10;
-}
 
 function readInitialSummaryToggle(): boolean {
   if (typeof window === 'undefined') {
@@ -62,42 +57,8 @@ export function useModel() {
     setVersion((prev) => prev + 1);
   }
 
-  function rebalanceCurrentTaxShares(editedCell: string, editedValue: number): void {
-    const otherCells = CURRENT_TAX_SHARE_CELLS.filter((cell) => cell !== editedCell);
-    const currentOtherValues = otherCells.map((cell) => cellToNumber(engine.getCell('assumptions', cell)) ?? 0);
-    const remainingTotal = Math.max(0, roundToTenths(100 - editedValue));
-    const currentOtherTotal = currentOtherValues.reduce((sum, value) => sum + value, 0);
-
-    let assignedTotal = 0;
-
-    otherCells.forEach((cell, index) => {
-      const isLast = index === otherCells.length - 1;
-      let nextValue: number;
-
-      if (isLast) {
-        nextValue = roundToTenths(remainingTotal - assignedTotal);
-      } else if (currentOtherTotal <= 0) {
-        nextValue = roundToTenths(remainingTotal / otherCells.length);
-        assignedTotal += nextValue;
-      } else {
-        nextValue = roundToTenths((remainingTotal * currentOtherValues[index]) / currentOtherTotal);
-        assignedTotal += nextValue;
-      }
-
-      engine.setCell('assumptions', cell, Math.max(0, nextValue));
-    });
-  }
-
   function updateAssumption(sheetCell: string, value: number): void {
     if (!Number.isFinite(value)) {
-      return;
-    }
-
-    if (CURRENT_TAX_SHARE_CELLS.includes(sheetCell as (typeof CURRENT_TAX_SHARE_CELLS)[number])) {
-      const roundedValue = roundToTenths(value);
-      engine.setCell('assumptions', sheetCell, roundedValue);
-      rebalanceCurrentTaxShares(sheetCell, roundedValue);
-      bump();
       return;
     }
 
