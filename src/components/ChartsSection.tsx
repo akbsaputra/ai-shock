@@ -24,6 +24,8 @@ interface ChartsSectionProps {
   onShowSummaryChange: (value: boolean) => void;
 }
 
+const PRIMARY_SUMMARY_CHART_IDS = new Set(['summary-total-tax-revenue', 'summary-net-fiscal-impact']);
+
 interface TooltipEntry {
   id: string;
   name: string;
@@ -512,6 +514,8 @@ export function ChartsSection({
   onShowSummaryChange,
 }: ChartsSectionProps) {
   const summaryCharts = charts.filter((chart) => chart.spec.group === 'summary');
+  const primarySummaryCharts = summaryCharts.filter((chart) => PRIMARY_SUMMARY_CHART_IDS.has(chart.spec.id));
+  const secondarySummaryCharts = summaryCharts.filter((chart) => !PRIMARY_SUMMARY_CHART_IDS.has(chart.spec.id));
   const changesCharts = charts.filter((chart) => chart.spec.group === 'changes');
 
   return (
@@ -566,7 +570,7 @@ export function ChartsSection({
 
       <section className="chart-section">
         <div className="chart-grid">
-          {summaryCharts.map((chart) => (
+          {primarySummaryCharts.map((chart) => (
             <ChartCard key={chart.spec.id} chart={chart} />
           ))}
         </div>
@@ -575,6 +579,14 @@ export function ChartsSection({
       <section className="chart-section">
         <div className="chart-grid chart-grid--single">
           {changesCharts.map((chart) => (
+            <ChartCard key={chart.spec.id} chart={chart} />
+          ))}
+        </div>
+      </section>
+
+      <section className="chart-section">
+        <div className="chart-grid">
+          {secondarySummaryCharts.map((chart) => (
             <ChartCard key={chart.spec.id} chart={chart} />
           ))}
         </div>
