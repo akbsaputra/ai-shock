@@ -44,10 +44,10 @@ describe('App interactions', () => {
     expect(screen.getByText(/Legend format:/i)).toBeInTheDocument();
     expect(screen.getByText(/impact\/market power/i)).toBeInTheDocument();
 
-    const laborChartCard = screen.getByRole('heading', { name: 'Labor Income Tax' }).closest('article');
-    expect(laborChartCard).not.toBeNull();
+    const labourChartCard = screen.getByRole('heading', { name: 'Labour Income Tax' }).closest('article');
+    expect(labourChartCard).not.toBeNull();
 
-    const chart = laborChartCard as HTMLElement;
+    const chart = labourChartCard as HTMLElement;
     const baselineLegend = within(chart).getByRole('button', { name: /^baseline$/i });
     const lowLowLegend = within(chart).getByRole('button', { name: /^low\/low$/i });
     const highHighLegend = within(chart).getByRole('button', { name: /^high\/high$/i });
@@ -90,7 +90,7 @@ describe('App interactions', () => {
     fireEvent.click(tabButton);
 
     expect(tabButton).toHaveAttribute('aria-selected', 'true');
-    expect(screen.getByText('Impact on labor income tax')).toBeInTheDocument();
+    expect(screen.getByText('Impact on labour income tax')).toBeInTheDocument();
   });
 
   it('groups scenario-specific assumptions and edits percentages in 0-100 units', () => {
@@ -126,17 +126,17 @@ describe('App interactions', () => {
     const currentTaxSection = screen.getByText('Current tax shares').closest('details');
     expect(currentTaxSection).not.toBeNull();
 
-    const laborTaxInput = within(currentTaxSection as HTMLElement).getByRole('spinbutton', {
-      name: /Labor income tax number/i,
+    const labourTaxInput = within(currentTaxSection as HTMLElement).getByRole('spinbutton', {
+      name: /Labour income tax number/i,
     });
     const capitalTaxInput = within(currentTaxSection as HTMLElement).getByRole('spinbutton', {
       name: /Capital income tax number/i,
     });
 
-    fireEvent.change(laborTaxInput, { target: { value: '50' } });
+    fireEvent.change(labourTaxInput, { target: { value: '50' } });
     fireEvent.change(capitalTaxInput, { target: { value: '20' } });
 
-    expect(laborTaxInput).toHaveValue(50);
+    expect(labourTaxInput).toHaveValue(50);
     expect(capitalTaxInput).toHaveValue(20);
   });
 });

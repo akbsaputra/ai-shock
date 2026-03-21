@@ -59,7 +59,7 @@ EDITABLE_GROUPS = {
         "C32",
         "C35",
     ],
-    "Labor Tax Dynamics": [
+    "Labour Tax Dynamics": [
         "C19",
         "C20",
         "C37",
@@ -270,7 +270,7 @@ def build_summary_groups(ws_summary_values: openpyxl.worksheet.worksheet.Workshe
     # Rows are inclusive ranges in workbook indexing
     groups = [
         ("Without AI shock", 4, 8),
-        ("Scenario labor tax (total)", 10, 15),
+        ("Scenario labour tax (total)", 10, 15),
         ("Scenario capital income tax (total)", 17, 22),
         ("Scenario consumption tax (total)", 24, 29),
         ("Total tax revenue (after AI shock)", 31, 36),

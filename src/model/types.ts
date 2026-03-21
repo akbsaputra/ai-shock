@@ -9,7 +9,7 @@ export type ScenarioKey =
 export type MarketPowerFocus = 'all' | 'low' | 'high';
 export type ImpactFocus = 'all' | 'low' | 'med' | 'high';
 
-export type AssumptionGroup = 'Core Drivers' | 'Tax & Pass-through' | 'Labor Tax Dynamics';
+export type AssumptionGroup = 'Core Drivers' | 'Tax & Pass-through' | 'Labour Tax Dynamics';
 
 export interface AssumptionControl {
   id: string;

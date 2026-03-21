@@ -95,8 +95,8 @@
           null
         ],
         [
-          "Labor income tax",
-          "labor_tax",
+          "Labour income tax",
+          "labour_tax",
           46.1,
           null,
           null,
@@ -185,9 +185,9 @@
           null
         ],
         [
-          "Baseline labor tax (exposed sector)",
-          "labor_tax_exposed",
-          "=labor_tax*C10",
+          "Baseline labour tax (exposed sector)",
+          "labour_tax_exposed",
+          "=labour_tax*C10",
           null,
           null,
           null,
@@ -200,9 +200,9 @@
           null
         ],
         [
-          "Baseline labor tax (non-exposed sector)",
-          "labor_tax_nonexposed",
-          "=labor_tax-labor_tax_exposed",
+          "Baseline labour tax (non-exposed sector)",
+          "labour_tax_nonexposed",
+          "=labour_tax-labour_tax_exposed",
           null,
           null,
           null,
@@ -305,8 +305,8 @@
           null
         ],
         [
-          "Average labor tax rate on exposed wage",
-          "labor_tax_rate_exposed",
+          "Average labour tax rate on exposed wage",
+          "labour_tax_rate_exposed",
           0.39,
           null,
           null,
@@ -337,7 +337,7 @@
         [
           "Baseline exposed wage expense",
           "wage_expense_exposed",
-          "=labor_tax_exposed/labor_tax_rate_exposed",
+          "=labour_tax_exposed/labour_tax_rate_exposed",
           null,
           null,
           null,
@@ -460,7 +460,7 @@
           "=C10",
           null,
           null,
-          "Automatically follows the exposed labor share",
+          "Automatically follows the exposed labour share",
           null,
           null,
           null,
@@ -560,7 +560,7 @@
           null
         ],
         [
-          "Labor tax rate",
+          "Labour tax rate",
           null,
           null,
           null,
@@ -575,8 +575,8 @@
           null
         ],
         [
-          "Labor tax rate during transition",
-          "labor_tax_rate_transition",
+          "Labour tax rate during transition",
+          "labour_tax_rate_transition",
           0.31,
           null,
           null,
@@ -590,8 +590,8 @@
           null
         ],
         [
-          "Labor tax rate after reeemployment",
-          "labor_tax_rate_post",
+          "Labour tax rate after reeemployment",
+          "labour_tax_rate_post",
           0.35,
           null,
           null,
@@ -605,7 +605,7 @@
           null
         ],
         [
-          "Taxable labor income during transition (relative to prev wage)",
+          "Taxable labour income during transition (relative to prev wage)",
           "transition_wage_ratio",
           0.33,
           null,
@@ -1055,18 +1055,18 @@
           null
         ],
         [
-          "Labor income tax (baseline)",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
+          "Labour income tax (baseline)",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
           "=SUM(C4:L4)",
           null,
           null,
@@ -1195,7 +1195,7 @@
           null
         ],
         [
-          "Scenario labor tax (total)",
+          "Scenario labour tax (total)",
           null,
           null,
           null,
@@ -3597,19 +3597,19 @@
         ],
         [
           "Without AI shock",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
-          "=labor_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
+          "=labour_tax",
           "=SUM(C4:L4)",
-          "labor income tax",
+          "labour income tax",
           null,
           null,
           null,
@@ -3736,7 +3736,7 @@
           null
         ],
         [
-          "Scenario labor tax (total) - low market power",
+          "Scenario labour tax (total) - low market power",
           null,
           null,
           null,
@@ -3848,7 +3848,7 @@
           null
         ],
         [
-          "Scenario labor tax (total) - high market power",
+          "Scenario labour tax (total) - high market power",
           null,
           null,
           null,
@@ -30876,7 +30876,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -30906,37 +30906,37 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
-          "=IF(B$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(B$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(B$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(C$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(C$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(C$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(D$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(D$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(D$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(E$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(E$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(E$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(F$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(F$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(F$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(G$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(G$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(G$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(H$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(H$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(H$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(I$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(I$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(I$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(J$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(J$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(J$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(K$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(K$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(K$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(L$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(L$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(L$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
+          "Labour income tax (exposed sector)",
+          "=IF(B$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(B$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(B$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(C$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(C$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(C$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(D$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(D$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(D$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(E$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(E$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(E$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(F$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(F$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(F$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(G$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(G$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(G$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(H$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(H$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(H$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(I$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(I$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(I$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(J$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(J$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(J$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(K$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(K$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(K$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(L$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(L$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(L$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
           "=sum(C5:L5)"
         ],
         [
-          "Labor income tax (non-exposed sector)",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
+          "Labour income tax (non-exposed sector)",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
           "=sum(C6:L6)"
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           "=B5+B6",
           "=C5+C6",
           "=D5+D6",
@@ -31803,7 +31803,7 @@
           null
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -31839,43 +31839,43 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
-          "=IF(B$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(B$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(B$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(C$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(C$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(C$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(D$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(D$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(D$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(E$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(E$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(E$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(F$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(F$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(F$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(G$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(G$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(G$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(H$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(H$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(H$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(I$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(I$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(I$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(J$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(J$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(J$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(K$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(K$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(K$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(L$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(L$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(L$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
+          "Labour income tax (exposed sector)",
+          "=IF(B$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(B$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(B$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(C$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(C$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(C$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(D$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(D$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(D$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(E$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(E$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(E$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(F$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(F$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(F$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(G$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(G$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(G$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(H$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(H$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(H$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(I$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(I$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(I$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(J$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(J$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(J$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(K$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(K$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(K$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(L$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(L$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(L$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
           "=sum(C5:L5)",
           null,
           null,
           null
         ],
         [
-          "Labor income tax (non-exposed sector)",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
+          "Labour income tax (non-exposed sector)",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
           "=sum(C6:L6)",
           null,
           null,
           null
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           "=B5+B6",
           "=C5+C6",
           "=D5+D6",
@@ -32901,7 +32901,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -32931,37 +32931,37 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
-          "=IF(B$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(B$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(B$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(C$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(C$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(C$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(D$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(D$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(D$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(E$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(E$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(E$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(F$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(F$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(F$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(G$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(G$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(G$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(H$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(H$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(H$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(I$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(I$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(I$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(J$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(J$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(J$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(K$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(K$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(K$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(L$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(L$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(L$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
+          "Labour income tax (exposed sector)",
+          "=IF(B$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(B$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(B$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(C$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(C$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(C$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(D$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(D$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(D$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(E$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(E$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(E$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(F$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(F$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(F$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(G$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(G$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(G$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(H$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(H$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(H$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(I$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(I$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(I$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(J$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(J$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(J$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(K$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(K$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(K$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(L$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(L$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(L$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
           "=sum(C5:L5)"
         ],
         [
-          "Labor income tax (non-exposed sector)",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
+          "Labour income tax (non-exposed sector)",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
           "=sum(C6:L6)"
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           "=B5+B6",
           "=C5+C6",
           "=D5+D6",
@@ -33822,7 +33822,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -33852,37 +33852,37 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
-          "=IF(B$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(B$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(B$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(C$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(C$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(C$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(D$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(D$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(D$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(E$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(E$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(E$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(F$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(F$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(F$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(G$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(G$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(G$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(H$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(H$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(H$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(I$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(I$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(I$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(J$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(J$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(J$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(K$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(K$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(K$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
-          "=IF(L$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labor_tax_rate_exposed + IF(L$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(L$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labor_tax_rate_post)))",
+          "Labour income tax (exposed sector)",
+          "=IF(B$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(B$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(B$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(C$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(C$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(C$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(D$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(D$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(D$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(E$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(E$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(E$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(F$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(F$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(F$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(G$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(G$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(G$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(H$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(H$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(H$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(I$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(I$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(I$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(J$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(J$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(J$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(K$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(K$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(K$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
+          "=IF(L$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_low) * labour_tax_rate_exposed + IF(L$2<shock_length_low, displacement_rate_low * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(L$2<shock_length_low, 0, displacement_rate_low * reemployment_share_low * reemployment_wage_low * labour_tax_rate_post)))",
           "=sum(C5:L5)"
         ],
         [
-          "Labor income tax (non-exposed sector)",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
+          "Labour income tax (non-exposed sector)",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
           "=sum(C6:L6)"
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           "=B5+B6",
           "=C5+C6",
           "=D5+D6",
@@ -34743,7 +34743,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -34773,37 +34773,37 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
-          "=IF(B$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(B$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(B$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(C$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(C$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(C$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(D$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(D$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(D$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(E$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(E$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(E$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(F$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(F$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(F$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(G$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(G$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(G$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(H$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(H$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(H$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(I$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(I$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(I$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(J$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(J$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(J$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(K$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(K$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(K$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
-          "=IF(L$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labor_tax_rate_exposed + IF(L$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(L$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labor_tax_rate_post)))",
+          "Labour income tax (exposed sector)",
+          "=IF(B$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(B$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(B$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(C$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(C$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(C$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(D$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(D$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(D$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(E$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(E$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(E$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(F$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(F$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(F$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(G$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(G$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(G$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(H$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(H$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(H$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(I$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(I$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(I$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(J$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(J$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(J$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(K$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(K$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(K$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
+          "=IF(L$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_med) * labour_tax_rate_exposed + IF(L$2<shock_length_med, displacement_rate_med * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(L$2<shock_length_med, 0, displacement_rate_med * reemployment_share_med * reemployment_wage_med * labour_tax_rate_post)))",
           "=sum(C5:L5)"
         ],
         [
-          "Labor income tax (non-exposed sector)",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
+          "Labour income tax (non-exposed sector)",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
           "=sum(C6:L6)"
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           "=B5+B6",
           "=C5+C6",
           "=D5+D6",
@@ -35664,7 +35664,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -35694,37 +35694,37 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
-          "=IF(B$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(B$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(B$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(C$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(C$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(C$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(D$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(D$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(D$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(E$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(E$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(E$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(F$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(F$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(F$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(G$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(G$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(G$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(H$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(H$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(H$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(I$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(I$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(I$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(J$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(J$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(J$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(K$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(K$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(K$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
-          "=IF(L$2=0, labor_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labor_tax_rate_exposed + IF(L$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labor_tax_rate_transition, 0) + IF(L$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labor_tax_rate_post)))",
+          "Labour income tax (exposed sector)",
+          "=IF(B$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(B$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(B$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(C$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(C$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(C$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(D$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(D$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(D$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(E$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(E$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(E$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(F$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(F$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(F$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(G$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(G$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(G$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(H$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(H$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(H$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(I$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(I$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(I$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(J$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(J$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(J$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(K$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(K$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(K$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
+          "=IF(L$2=0, labour_tax_exposed, wage_expense_exposed * ((1-displacement_rate_high) * labour_tax_rate_exposed + IF(L$2<shock_length_high, displacement_rate_high * transition_wage_ratio * labour_tax_rate_transition, 0) + IF(L$2<shock_length_high, 0, displacement_rate_high * reemployment_share_high * reemployment_wage_high * labour_tax_rate_post)))",
           "=sum(C5:L5)"
         ],
         [
-          "Labor income tax (non-exposed sector)",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
-          "=labor_tax_nonexposed",
+          "Labour income tax (non-exposed sector)",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
+          "=labour_tax_nonexposed",
           "=sum(C6:L6)"
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           "=B5+B6",
           "=C5+C6",
           "=D5+D6",
@@ -36617,8 +36617,8 @@
           null
         ],
         [
-          "Labor income tax",
-          "labor_tax",
+          "Labour income tax",
+          "labour_tax",
           46.1,
           null,
           null,
@@ -36707,8 +36707,8 @@
           null
         ],
         [
-          "Baseline labor tax (exposed sector)",
-          "labor_tax_exposed",
+          "Baseline labour tax (exposed sector)",
+          "labour_tax_exposed",
           27.66,
           null,
           null,
@@ -36722,8 +36722,8 @@
           null
         ],
         [
-          "Baseline labor tax (non-exposed sector)",
-          "labor_tax_nonexposed",
+          "Baseline labour tax (non-exposed sector)",
+          "labour_tax_nonexposed",
           18.44,
           null,
           null,
@@ -36827,8 +36827,8 @@
           null
         ],
         [
-          "Average labor tax rate on exposed wage",
-          "labor_tax_rate_exposed",
+          "Average labour tax rate on exposed wage",
+          "labour_tax_rate_exposed",
           0.39,
           null,
           null,
@@ -36982,7 +36982,7 @@
           0.6,
           null,
           null,
-          "Automatically follows the exposed labor share",
+          "Automatically follows the exposed labour share",
           null,
           null,
           null,
@@ -37082,7 +37082,7 @@
           null
         ],
         [
-          "Labor tax rate",
+          "Labour tax rate",
           null,
           null,
           null,
@@ -37097,8 +37097,8 @@
           null
         ],
         [
-          "Labor tax rate during transition",
-          "labor_tax_rate_transition",
+          "Labour tax rate during transition",
+          "labour_tax_rate_transition",
           0.31,
           null,
           null,
@@ -37112,8 +37112,8 @@
           null
         ],
         [
-          "Labor tax rate after reeemployment",
-          "labor_tax_rate_post",
+          "Labour tax rate after reeemployment",
+          "labour_tax_rate_post",
           0.35,
           null,
           null,
@@ -37127,7 +37127,7 @@
           null
         ],
         [
-          "Taxable labor income during transition (relative to prev wage)",
+          "Taxable labour income during transition (relative to prev wage)",
           "transition_wage_ratio",
           0.33,
           null,
@@ -37577,7 +37577,7 @@
           null
         ],
         [
-          "Labor income tax (baseline)",
+          "Labour income tax (baseline)",
           46.1,
           46.1,
           46.1,
@@ -37717,7 +37717,7 @@
           null
         ],
         [
-          "Scenario labor tax (total)",
+          "Scenario labour tax (total)",
           null,
           null,
           null,
@@ -40131,7 +40131,7 @@
           46.1,
           46.1,
           461,
-          "labor income tax",
+          "labour income tax",
           null,
           null,
           null,
@@ -40258,7 +40258,7 @@
           null
         ],
         [
-          "Scenario labor tax (total) - low market power",
+          "Scenario labour tax (total) - low market power",
           null,
           null,
           null,
@@ -40370,7 +40370,7 @@
           null
         ],
         [
-          "Scenario labor tax (total) - high market power",
+          "Scenario labour tax (total) - high market power",
           null,
           null,
           null,
@@ -67398,7 +67398,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -67428,7 +67428,7 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
+          "Labour income tax (exposed sector)",
           27.66,
           23.57908615,
           23.57908615,
@@ -67443,7 +67443,7 @@
           252.7783569
         ],
         [
-          "Labor income tax (non-exposed sector)",
+          "Labour income tax (non-exposed sector)",
           18.44,
           18.44,
           18.44,
@@ -67458,7 +67458,7 @@
           184.4
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           46.1,
           42.01908615,
           42.01908615,
@@ -68325,7 +68325,7 @@
           null
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -68361,7 +68361,7 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
+          "Labour income tax (exposed sector)",
           27.66,
           17.45771538,
           17.45771538,
@@ -68379,7 +68379,7 @@
           null
         ],
         [
-          "Labor income tax (non-exposed sector)",
+          "Labour income tax (non-exposed sector)",
           18.44,
           18.44,
           18.44,
@@ -68397,7 +68397,7 @@
           null
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           46.1,
           35.89771538,
           35.89771538,
@@ -69423,7 +69423,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -69453,7 +69453,7 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
+          "Labour income tax (exposed sector)",
           27.66,
           11.33634462,
           11.33634462,
@@ -69468,7 +69468,7 @@
           118.4358646
         ],
         [
-          "Labor income tax (non-exposed sector)",
+          "Labour income tax (non-exposed sector)",
           18.44,
           18.44,
           18.44,
@@ -69483,7 +69483,7 @@
           184.4
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           46.1,
           29.77634462,
           29.77634462,
@@ -70344,7 +70344,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -70374,7 +70374,7 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
+          "Labour income tax (exposed sector)",
           27.66,
           23.57908615,
           23.57908615,
@@ -70389,7 +70389,7 @@
           252.7783569
         ],
         [
-          "Labor income tax (non-exposed sector)",
+          "Labour income tax (non-exposed sector)",
           18.44,
           18.44,
           18.44,
@@ -70404,7 +70404,7 @@
           184.4
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           46.1,
           42.01908615,
           42.01908615,
@@ -71265,7 +71265,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -71295,7 +71295,7 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
+          "Labour income tax (exposed sector)",
           27.66,
           17.45771538,
           17.45771538,
@@ -71310,7 +71310,7 @@
           191.1908846
         ],
         [
-          "Labor income tax (non-exposed sector)",
+          "Labour income tax (non-exposed sector)",
           18.44,
           18.44,
           18.44,
@@ -71325,7 +71325,7 @@
           184.4
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           46.1,
           35.89771538,
           35.89771538,
@@ -72186,7 +72186,7 @@
           "Total"
         ],
         [
-          "Impact on labor income tax",
+          "Impact on labour income tax",
           null,
           null,
           null,
@@ -72216,7 +72216,7 @@
           null
         ],
         [
-          "Labor income tax (exposed sector)",
+          "Labour income tax (exposed sector)",
           27.66,
           11.33634462,
           11.33634462,
@@ -72231,7 +72231,7 @@
           118.4358646
         ],
         [
-          "Labor income tax (non-exposed sector)",
+          "Labour income tax (non-exposed sector)",
           18.44,
           18.44,
           18.44,
@@ -72246,7 +72246,7 @@
           184.4
         ],
         [
-          "Labor income tax (total)",
+          "Labour income tax (total)",
           46.1,
           29.77634462,
           29.77634462,
@@ -73074,11 +73074,11 @@
     }
   },
   "namedExpressions": {
-    "labor_tax_nonexposed": "=assumptions!$C$12",
+    "labour_tax_nonexposed": "=assumptions!$C$12",
     "cons_tax_rate": "=assumptions!$C$30",
     "foreign_share_low": "=assumptions!$C$25",
     "consumer_share_low": "=assumptions!$C$24",
-    "labor_tax_rate_transition": "=assumptions!$C$37",
+    "labour_tax_rate_transition": "=assumptions!$C$37",
     "displacement_rate_med": "=assumptions!$D$14",
     "shock_length_low": "=assumptions!$C$17",
     "foreign_share_high": "=assumptions!$D$25",
@@ -73086,20 +73086,20 @@
     "corp_tax": "=assumptions!$C$6",
     "domestic_share_low": "=assumptions!$C$23",
     "transition_wage_ratio": "=assumptions!$C$39",
-    "labor_tax_exposed": "=assumptions!$C$11",
+    "labour_tax_exposed": "=assumptions!$C$11",
     "reemployment_share_high": "=assumptions!$E$15",
-    "labor_tax_rate_exposed": "=assumptions!$C$19",
+    "labour_tax_rate_exposed": "=assumptions!$C$19",
     "shock_length_med": "=assumptions!$D$17",
     "shock_length_high": "=assumptions!$E$17",
     "consumer_share_high": "=assumptions!$D$24",
     "total_tax": "=assumptions!$C$4",
     "reemployment_share_low": "=assumptions!$C$15",
     "displacement_rate_low": "=assumptions!$C$14",
-    "labor_tax": "=assumptions!$C$5",
+    "labour_tax": "=assumptions!$C$5",
     "benefit_replacement_rate": "=assumptions!$C$20",
     "other_tax": "=assumptions!$C$8",
     "cons_tax_share_domestic_surplus": "=assumptions!$C$32",
-    "labor_tax_rate_post": "=assumptions!$C$38",
+    "labour_tax_rate_post": "=assumptions!$C$38",
     "cons_tax_share_exposed": "=assumptions!$C$29",
     "reemployment_share_med": "=assumptions!$D$15",
     "corp_tax_rate": "=assumptions!$C$27",
@@ -73406,8 +73406,8 @@
         "sheet": "assumptions",
         "sheetCell": "C5",
         "group": "Tax & Pass-through",
-        "label": "Labor income tax",
-        "variable": "labor_tax",
+        "label": "Labour income tax",
+        "variable": "labour_tax",
         "additionalInfo": null,
         "editable": true,
         "defaultValue": 46.1,
@@ -73540,9 +73540,9 @@
         "id": "assumptions-c19",
         "sheet": "assumptions",
         "sheetCell": "C19",
-        "group": "Labor Tax Dynamics",
-        "label": "Average labor tax rate on exposed wage",
-        "variable": "labor_tax_rate_exposed",
+        "group": "Labour Tax Dynamics",
+        "label": "Average labour tax rate on exposed wage",
+        "variable": "labour_tax_rate_exposed",
         "additionalInfo": null,
         "editable": true,
         "defaultValue": 0.39,
@@ -73555,7 +73555,7 @@
         "id": "assumptions-c20",
         "sheet": "assumptions",
         "sheetCell": "C20",
-        "group": "Labor Tax Dynamics",
+        "group": "Labour Tax Dynamics",
         "label": "Benefit replacement rate (share of prev wage)",
         "variable": "benefit_replacement_rate",
         "additionalInfo": null,
@@ -73570,9 +73570,9 @@
         "id": "assumptions-c37",
         "sheet": "assumptions",
         "sheetCell": "C37",
-        "group": "Labor Tax Dynamics",
-        "label": "Labor tax rate during transition",
-        "variable": "labor_tax_rate_transition",
+        "group": "Labour Tax Dynamics",
+        "label": "Labour tax rate during transition",
+        "variable": "labour_tax_rate_transition",
         "additionalInfo": null,
         "editable": true,
         "defaultValue": 0.31,
@@ -73585,9 +73585,9 @@
         "id": "assumptions-c38",
         "sheet": "assumptions",
         "sheetCell": "C38",
-        "group": "Labor Tax Dynamics",
-        "label": "Labor tax rate after reeemployment",
-        "variable": "labor_tax_rate_post",
+        "group": "Labour Tax Dynamics",
+        "label": "Labour tax rate after reeemployment",
+        "variable": "labour_tax_rate_post",
         "additionalInfo": null,
         "editable": true,
         "defaultValue": 0.35,
@@ -73600,8 +73600,8 @@
         "id": "assumptions-c39",
         "sheet": "assumptions",
         "sheetCell": "C39",
-        "group": "Labor Tax Dynamics",
-        "label": "Taxable labor income during transition (relative to prev wage)",
+        "group": "Labour Tax Dynamics",
+        "label": "Taxable labour income during transition (relative to prev wage)",
         "variable": "transition_wage_ratio",
         "additionalInfo": null,
         "editable": true,
@@ -73626,8 +73626,8 @@
         "id": "assumptions-c11",
         "sheet": "assumptions",
         "sheetCell": "C11",
-        "label": "Baseline labor tax (exposed sector)",
-        "variable": "labor_tax_exposed",
+        "label": "Baseline labour tax (exposed sector)",
+        "variable": "labour_tax_exposed",
         "additionalInfo": null,
         "editable": false
       },
@@ -73635,8 +73635,8 @@
         "id": "assumptions-c12",
         "sheet": "assumptions",
         "sheetCell": "C12",
-        "label": "Baseline labor tax (non-exposed sector)",
-        "variable": "labor_tax_nonexposed",
+        "label": "Baseline labour tax (non-exposed sector)",
+        "variable": "labour_tax_nonexposed",
         "additionalInfo": null,
         "editable": false
       },
@@ -73655,7 +73655,7 @@
         "sheetCell": "C29",
         "label": "Share of consumption taxes linked to exposed workers income",
         "variable": "cons_tax_share_exposed",
-        "additionalInfo": "Automatically follows the exposed labor share",
+        "additionalInfo": "Automatically follows the exposed labour share",
         "editable": false
       },
       {
@@ -73680,7 +73680,7 @@
     "groups": [
       "Core Drivers",
       "Tax & Pass-through",
-      "Labor Tax Dynamics"
+      "Labour Tax Dynamics"
     ],
     "infoMap": {
       "Name": "Additional Info",
@@ -73690,7 +73690,7 @@
       "Re-employment share of displaced": "this is the inverse of the permanent exit rate",
       "Re-employment wage (relative to prev jobs)": "this is the inverse of the wage scarring rate",
       "Length of shocks": "assumes a one-off AI shock at Year 1 and full re-employment share, not gradual",
-      "Share of consumption taxes linked to exposed workers income": "Automatically follows the exposed labor share",
+      "Share of consumption taxes linked to exposed workers income": "Automatically follows the exposed labour share",
       "Consumption pass through from exposed wage loss": "VAT \"stickiness\" parameter"
     }
   },
@@ -73708,7 +73708,7 @@
         "startRow": 4,
         "endRow": 8,
         "rowLabels": [
-          "Labor income tax (baseline)",
+          "Labour income tax (baseline)",
           "Capital income tax",
           "Consumption tax",
           "Other taxes",
@@ -73716,7 +73716,7 @@
         ]
       },
       {
-        "title": "Scenario labor tax (total)",
+        "title": "Scenario labour tax (total)",
         "startRow": 10,
         "endRow": 15,
         "rowLabels": [
@@ -73843,7 +73843,7 @@
       "sectionRows": [
         {
           "row": 3,
-          "label": "Impact on labor income tax"
+          "label": "Impact on labour income tax"
         },
         {
           "row": 8,
@@ -73867,11 +73867,11 @@
         }
       ],
       "rowLabels": [
-        "Impact on labor income tax",
+        "Impact on labour income tax",
         "Retained wage share (in exposed sector)",
-        "Labor income tax (exposed sector)",
-        "Labor income tax (non-exposed sector)",
-        "Labor income tax (total)",
+        "Labour income tax (exposed sector)",
+        "Labour income tax (non-exposed sector)",
+        "Labour income tax (total)",
         "Allocation of displaced wages",
         "Displaced wages (exposed sector)",
         "Domestic surplus from automation",

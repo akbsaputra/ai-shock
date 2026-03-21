@@ -2,8 +2,8 @@ import type { ChartSpec } from './types';
 
 export const CHART_SPECS: ChartSpec[] = [
   {
-    id: 'summary-labor-tax',
-    title: 'Labor Income Tax',
+    id: 'summary-labour-tax',
+    title: 'Labour Income Tax',
     group: 'summary',
     chartType: 'line',
     sheet: 'summary',
@@ -123,8 +123,8 @@ export const CHART_SPECS: ChartSpec[] = [
     ],
   },
   {
-    id: 'deep-labor-low',
-    title: 'Labor Tax (Low Market Power)',
+    id: 'deep-labour-low',
+    title: 'Labour Tax (Low Market Power)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',

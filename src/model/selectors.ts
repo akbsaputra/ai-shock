@@ -67,9 +67,9 @@ export interface AssumptionSheetSectionView {
 }
 
 const ASSUMPTION_SECTION_IDS = {
-  laborBenefits: 'assumption-sheet-section-18',
+  labourBenefits: 'assumption-sheet-section-18',
   allocation: 'assumption-sheet-section-22',
-  laborTaxRates: 'assumption-sheet-section-36',
+  labourTaxRates: 'assumption-sheet-section-36',
 } as const;
 
 function toNumber(value: number | string | boolean | null): number {
@@ -234,7 +234,7 @@ export function selectAssumptionSheet(engine: ModelEngine): AssumptionSheetSecti
     };
   });
 
-  return mergeLaborTaxAndBenefitsSections(
+  return mergeLabourTaxAndBenefitsSections(
     sections
       .map((section) => normalizeAssumptionSection(section))
       .filter((section) => section.rows.length > 0),
@@ -325,19 +325,19 @@ function normalizeAssumptionSection(section: AssumptionSheetSectionView): Assump
   };
 }
 
-function mergeLaborTaxAndBenefitsSections(sections: AssumptionSheetSectionView[]): AssumptionSheetSectionView[] {
-  const laborTaxRates = sections.find((section) => section.id === ASSUMPTION_SECTION_IDS.laborTaxRates);
+function mergeLabourTaxAndBenefitsSections(sections: AssumptionSheetSectionView[]): AssumptionSheetSectionView[] {
+  const labourTaxRates = sections.find((section) => section.id === ASSUMPTION_SECTION_IDS.labourTaxRates);
 
   return sections
-    .filter((section) => section.id !== ASSUMPTION_SECTION_IDS.laborTaxRates)
+    .filter((section) => section.id !== ASSUMPTION_SECTION_IDS.labourTaxRates)
     .map((section) => {
-      if (section.id !== ASSUMPTION_SECTION_IDS.laborBenefits) {
+      if (section.id !== ASSUMPTION_SECTION_IDS.labourBenefits) {
         return section;
       }
       return {
         ...section,
-        title: 'Labor tax rates and benefits',
-        rows: laborTaxRates ? [...section.rows, ...laborTaxRates.rows] : section.rows,
+        title: 'Labour tax rates and benefits',
+        rows: labourTaxRates ? [...section.rows, ...labourTaxRates.rows] : section.rows,
       };
       });
 }

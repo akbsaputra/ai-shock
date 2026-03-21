@@ -18,8 +18,8 @@ interface AssumptionsSectionProps {
 }
 
 const HALF_WIDTH_ROW_LABELS = new Set([
-  'Baseline labor tax (exposed sector)',
-  'Baseline labor tax (non-exposed sector)',
+  'Baseline labour tax (exposed sector)',
+  'Baseline labour tax (non-exposed sector)',
 ]);
 const ALLOCATION_SECTION_ID = 'assumption-sheet-section-22';
 
