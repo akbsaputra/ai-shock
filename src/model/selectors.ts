@@ -1,4 +1,4 @@
-import { CHART_SPECS } from './chartSpecs';
+﻿import { CHART_SPECS } from './chartSpecs';
 import { BASELINE_COLOR, CHANGES_SERIES_COLORS, SCENARIO_COLORS, SCENARIO_KEYS, SCENARIO_LABELS } from './constants';
 import { cellToNumber, type ModelEngine } from './engine';
 import type {
@@ -292,13 +292,13 @@ function buildAllocationRows(rows: AssumptionSheetRowView[]): AssumptionSheetRow
   const groupedRows: AssumptionSheetRowView[] = [
     {
       id: 'assumption-sheet-row-allocation-low',
-      label: 'Low market power',
+      label: 'High domestic value capture',
       additionalInfo: null,
       variants: lowVariants,
     },
     {
       id: 'assumption-sheet-row-allocation-high',
-      label: 'High market power',
+      label: 'Low domestic value capture',
       additionalInfo: null,
       variants: highVariants,
     },
@@ -616,3 +616,4 @@ export function selectScenarioRowsForChangesChart(engine: ModelEngine): string[]
     .flat()
     .map((item) => toLabel(item));
 }
+

@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from '@testing-library/react';
+﻿import { fireEvent, render, screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import App from './App';
 
@@ -38,31 +38,31 @@ describe('App interactions', () => {
     expect(mediumButton).toHaveClass('segmented__button--active');
   });
 
-  it('shows legend labels in impact/market power format and keeps them visible', () => {
+  it('shows legend labels in impact/domestic value capture format and keeps them visible', () => {
     render(<App />);
 
     expect(screen.getByText(/Legend format:/i)).toBeInTheDocument();
-    expect(screen.getByText(/impact\/market power/i)).toBeInTheDocument();
+    expect(screen.getByText(/impact\/domestic value capture/i)).toBeInTheDocument();
 
     const labourChartCard = screen.getByRole('heading', { name: 'Labour Income Tax' }).closest('article');
     expect(labourChartCard).not.toBeNull();
 
     const chart = labourChartCard as HTMLElement;
     const baselineLegend = within(chart).getByRole('button', { name: /^baseline$/i });
-    const lowLowLegend = within(chart).getByRole('button', { name: /^low\/low$/i });
-    const highHighLegend = within(chart).getByRole('button', { name: /^high\/high$/i });
-    const medLowLegend = within(chart).getByRole('button', { name: /^med\/low$/i });
+    const lowHighLegend = within(chart).getByRole('button', { name: /^low\/high$/i });
+    const highLowLegend = within(chart).getByRole('button', { name: /^high\/low$/i });
+    const medHighLegend = within(chart).getByRole('button', { name: /^med\/high$/i });
 
     expect(baselineLegend).toBeInTheDocument();
-    expect(lowLowLegend).toBeInTheDocument();
-    expect(highHighLegend).toBeInTheDocument();
+    expect(lowHighLegend).toBeInTheDocument();
+    expect(highLowLegend).toBeInTheDocument();
 
-    fireEvent.click(lowLowLegend);
-    fireEvent.click(highHighLegend);
+    fireEvent.click(lowHighLegend);
+    fireEvent.click(highLowLegend);
 
-    expect(lowLowLegend).toHaveClass('chart-card__series-item--active');
-    expect(highHighLegend).toHaveClass('chart-card__series-item--active');
-    expect(medLowLegend).not.toHaveClass('chart-card__series-item--active');
+    expect(lowHighLegend).toHaveClass('chart-card__series-item--active');
+    expect(highLowLegend).toHaveClass('chart-card__series-item--active');
+    expect(medHighLegend).not.toHaveClass('chart-card__series-item--active');
 
     ['Benefit Spending', 'Capital Income Tax', 'Net Fiscal Impact'].forEach((title) => {
       const summaryCard = screen.getByRole('heading', { name: title }).closest('article');
@@ -86,7 +86,7 @@ describe('App interactions', () => {
   it('switches scenario tabs while preserving shared row labels', () => {
     render(<App />);
 
-    const tabButton = screen.getAllByRole('tab', { name: /High impact\s*\/\s*High market power/i })[0];
+    const tabButton = screen.getAllByRole('tab', { name: /High impact\s*\/\s*Low domestic value capture/i })[0];
     fireEvent.click(tabButton);
 
     expect(tabButton).toHaveAttribute('aria-selected', 'true');
@@ -140,3 +140,4 @@ describe('App interactions', () => {
     expect(capitalTaxInput).toHaveValue(20);
   });
 });
+

@@ -1,4 +1,4 @@
-import type { ScenarioKey } from './types';
+﻿import type { ScenarioKey } from './types';
 
 export const SCENARIO_KEYS: ScenarioKey[] = [
   'low-low',
@@ -10,12 +10,12 @@ export const SCENARIO_KEYS: ScenarioKey[] = [
 ];
 
 export const SCENARIO_LABELS: Record<ScenarioKey, string> = {
-  'low-low': 'Low impact/Low market power',
-  'med-low': 'Medium impact/Low market power',
-  'high-low': 'High impact/Low market power',
-  'low-high': 'Low impact/High market power',
-  'med-high': 'Medium impact/High market power',
-  'high-high': 'High impact/High market power',
+  'low-low': 'Low impact/High domestic value capture',
+  'med-low': 'Medium impact/High domestic value capture',
+  'high-low': 'High impact/High domestic value capture',
+  'low-high': 'Low impact/Low domestic value capture',
+  'med-high': 'Medium impact/Low domestic value capture',
+  'high-high': 'High impact/Low domestic value capture',
 };
 
 export const SCENARIO_COLORS: Record<ScenarioKey, string> = {
@@ -33,3 +33,4 @@ export const CHANGES_SERIES_COLORS: Record<string, string> = {
   'total-change': '#2563EB',
   'net-change': '#DC2626',
 };
+

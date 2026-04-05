@@ -5,3 +5,4 @@ coverage/
 *.log
 scripts/__pycache__/
 __pycache__/
+/img/psd/

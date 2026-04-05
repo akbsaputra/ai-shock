@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import re
@@ -183,7 +183,7 @@ def make_control(
     if row_idx in {14, 15, 16, 17}:
         qualifier = {3: " (low)", 4: " (medium)", 5: " (high)"}[col_idx]
     if row_idx in {23, 24, 25}:
-        qualifier = {3: " (low market power)", 4: " (high market power)"}[col_idx]
+        qualifier = {3: " (high domestic value capture)", 4: " (low domestic value capture)"}[col_idx]
 
     field_range = deepcopy(RANGE_MAP[address])
     default_value = ws.cell(row_idx, col_idx).value
@@ -395,3 +395,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

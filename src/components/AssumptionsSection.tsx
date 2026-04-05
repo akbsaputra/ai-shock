@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+﻿import type { ReactNode } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import type { AssumptionSheetSectionView, AssumptionSheetVariantView } from '../model/selectors';
 import { formatValue } from '../utils/format';
@@ -277,25 +277,25 @@ function AllocationGuidance({ controls }: { controls: AssumptionControlView[] })
 
   return (
     <div className="allocation-guidance" role="note">
-      <p>For each market power assumption, domestic, consumer, and foreign/cost shares should sum to 100%.</p>
+      <p>For each domestic value capture assumption, domestic, consumer, and foreign/cost shares should sum to 100%.</p>
       <div className="allocation-guidance__totals">
         <p className={lowOffTarget ? 'allocation-guidance__total allocation-guidance__total--off' : 'allocation-guidance__total allocation-guidance__total--ok'}>
           <span
             className={lowOffTarget ? 'allocation-guidance__badge allocation-guidance__badge--off' : 'allocation-guidance__badge allocation-guidance__badge--ok'}
             aria-hidden="true"
           >
-            {lowOffTarget ? 'x' : '✓'}
+            {lowOffTarget ? '\u2717' : '\u2713'}
           </span>
-          Low market power total: {(lowSum * 100).toFixed(1)}%
+          High domestic value capture total: {(lowSum * 100).toFixed(1)}%
         </p>
         <p className={highOffTarget ? 'allocation-guidance__total allocation-guidance__total--off' : 'allocation-guidance__total allocation-guidance__total--ok'}>
           <span
             className={highOffTarget ? 'allocation-guidance__badge allocation-guidance__badge--off' : 'allocation-guidance__badge allocation-guidance__badge--ok'}
             aria-hidden="true"
           >
-            {highOffTarget ? 'x' : '✓'}
+            {highOffTarget ? '\u2717' : '\u2713'}
           </span>
-          High market power total: {(highSum * 100).toFixed(1)}%
+          Low domestic value capture total: {(highSum * 100).toFixed(1)}%
         </p>
       </div>
     </div>
@@ -411,3 +411,4 @@ export function AssumptionsSection({
     </section>
   );
 }
+

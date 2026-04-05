@@ -1,4 +1,4 @@
-import type { ChartSpec } from './types';
+﻿import type { ChartSpec } from './types';
 
 export const CHART_SPECS: ChartSpec[] = [
   {
@@ -124,7 +124,7 @@ export const CHART_SPECS: ChartSpec[] = [
   },
   {
     id: 'deep-labour-low',
-    title: 'Labour Tax (Low Market Power)',
+    title: 'Labour Tax (High Domestic Value Capture)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',
@@ -139,7 +139,7 @@ export const CHART_SPECS: ChartSpec[] = [
   },
   {
     id: 'deep-capital-low',
-    title: 'Capital Tax (Low Market Power)',
+    title: 'Capital Tax (High Domestic Value Capture)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',
@@ -154,7 +154,7 @@ export const CHART_SPECS: ChartSpec[] = [
   },
   {
     id: 'deep-capital-high',
-    title: 'Capital Tax (High Market Power)',
+    title: 'Capital Tax (Low Domestic Value Capture)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',
@@ -169,7 +169,7 @@ export const CHART_SPECS: ChartSpec[] = [
   },
   {
     id: 'deep-consumption-low',
-    title: 'Consumption Tax (Low Market Power)',
+    title: 'Consumption Tax (High Domestic Value Capture)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',
@@ -184,7 +184,7 @@ export const CHART_SPECS: ChartSpec[] = [
   },
   {
     id: 'deep-consumption-high',
-    title: 'Consumption Tax (High Market Power)',
+    title: 'Consumption Tax (Low Domestic Value Capture)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',
@@ -199,7 +199,7 @@ export const CHART_SPECS: ChartSpec[] = [
   },
   {
     id: 'deep-total-low',
-    title: 'Total Tax Revenue (Low Market Power)',
+    title: 'Total Tax Revenue (High Domestic Value Capture)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',
@@ -214,7 +214,7 @@ export const CHART_SPECS: ChartSpec[] = [
   },
   {
     id: 'deep-total-high',
-    title: 'Total Tax Revenue (High Market Power)',
+    title: 'Total Tax Revenue (Low Domestic Value Capture)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',
@@ -229,7 +229,7 @@ export const CHART_SPECS: ChartSpec[] = [
   },
   {
     id: 'deep-net-low',
-    title: 'Net Fiscal Impact (Low Market Power)',
+    title: 'Net Fiscal Impact (High Domestic Value Capture)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',
@@ -244,7 +244,7 @@ export const CHART_SPECS: ChartSpec[] = [
   },
   {
     id: 'deep-net-high',
-    title: 'Net Fiscal Impact (High Market Power)',
+    title: 'Net Fiscal Impact (Low Domestic Value Capture)',
     group: 'deep-dive',
     chartType: 'line',
     sheet: 'charts',
@@ -258,3 +258,4 @@ export const CHART_SPECS: ChartSpec[] = [
     ],
   },
 ];
+

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import {
   Bar,
   BarChart,
@@ -62,6 +62,7 @@ function compactSeriesName(name: string): string {
     .replace('Medium impact', 'Med')
     .replace(' impact', '')
     .replace(' / ', '/')
+    .replace(' domestic value capture', ' DVC')
     .replace(' market power', ' MP');
 }
 
@@ -73,7 +74,8 @@ function formatLegendLabel(series: ChartSeriesView): string {
   if (series.scenarioKey) {
     const [impact, marketPower] = series.scenarioKey.split('-');
     if (impact && marketPower) {
-      return `${impact}/${marketPower}`;
+      const domesticValueCapture = marketPower === 'low' ? 'high' : marketPower === 'high' ? 'low' : marketPower;
+      return `${impact}/${domesticValueCapture}`;
     }
   }
 
@@ -83,7 +85,7 @@ function formatLegendLabel(series: ChartSeriesView): string {
 function parseScenarioLabel(value: string): { impact: ImpactBucket; marketPower: 'low' | 'high' } | null {
   const normalized = value.replace(/\s+/g, ' ').trim().toLowerCase();
   const impactMatch = normalized.match(/\b(low|med|medium|high)\s+impact\b/);
-  const marketPowerMatch = normalized.match(/\b(low|high)\s+market power\b/);
+  const marketPowerMatch = normalized.match(/\b(low|high)\s+(?:market power|domestic value capture)\b/);
 
   if (!impactMatch || !marketPowerMatch) {
     return null;
@@ -119,7 +121,7 @@ function formatScenarioLabelForTooltip(value: string | number): string {
 
   const impactLabel = parsed.impact === 'med' ? 'Medium' : parsed.impact === 'low' ? 'Low' : 'High';
   const marketPowerLabel = parsed.marketPower === 'low' ? 'Low' : 'High';
-  return `${impactLabel} impact/${marketPowerLabel} market power`;
+  return `${impactLabel} impact/${marketPowerLabel} domestic value capture`;
 }
 
 function formatTooltipPercent(value: number | null): string {
@@ -525,8 +527,8 @@ export function ChartsSection({
 
         <div className="charts-toolbar__controls">
           <p className="charts-toolbar__legend-note">
-            <span>Legend format: impact/market power</span>
-            <span>For example, "low/high" means low impact and high market power.</span>
+            <span>Legend format: impact/domestic value capture</span>
+            <span>For example, "low/high" means low impact and high domestic value capture.</span>
             <span>Line charts: drag the timeline handles to zoom.</span>
           </p>
           <div className="charts-toolbar__filters">
@@ -543,7 +545,7 @@ export function ChartsSection({
               ))}
             </div>
 
-            <div className="segmented" role="group" aria-label="Market power focus">
+            <div className="segmented" role="group" aria-label="Domestic value capture focus">
               {(['all', 'low', 'high'] as const).map((focus) => (
                 <button
                   key={focus}
@@ -551,7 +553,7 @@ export function ChartsSection({
                   className={`segmented__button ${marketPowerFocus === focus ? 'segmented__button--active' : ''}`}
                   onClick={() => onMarketPowerFocusChange(focus)}
                 >
-                  {focus === 'all' ? 'All Market Power' : focus === 'low' ? 'Low' : 'High'}
+                  {focus === 'all' ? 'All Domestic Value Capture' : focus === 'low' ? 'Low' : 'High'}
                 </button>
               ))}
             </div>
@@ -595,3 +597,4 @@ export function ChartsSection({
     </section>
   );
 }
+

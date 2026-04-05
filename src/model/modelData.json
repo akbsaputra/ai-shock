@@ -1,9 +1,9 @@
-{
+﻿{
   "metadata": {
     "title": "AI Shock Fiscal Simulator",
     "generatedAt": "2026-02-26T13:38:38.034731Z",
     "workbookSource": "c:\\Users\\akbar\\Downloads\\AI shock model (11).xlsx",
-    "workbookLastModified": "2026-03-17",
+    "workbookLastModified": "2026-04-05",
     "includedSheets": [
       "assumptions",
       "summary",
@@ -352,8 +352,8 @@
         [
           "Allocation of displaced wages",
           null,
-          "low market power",
-          "high market power",
+          "high domestic value capture",
+          "low domestic value capture",
           null,
           null,
           null,
@@ -1223,7 +1223,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           "='low-low'!B7",
           "='low-low'!C7",
           "='low-low'!D7",
@@ -1251,7 +1251,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           "='med-low'!B7",
           "='med-low'!C7",
           "='med-low'!D7",
@@ -1279,7 +1279,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           "='high-low'!B7",
           "='high-low'!C7",
           "='high-low'!D7",
@@ -1307,7 +1307,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           "='low-high'!B7",
           "='low-high'!C7",
           "='low-high'!D7",
@@ -1335,7 +1335,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           "='med-high'!B7",
           "='med-high'!C7",
           "='med-high'!D7",
@@ -1363,7 +1363,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           "='high-high'!B7",
           "='high-high'!C7",
           "='high-high'!D7",
@@ -1419,7 +1419,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           "='low-low'!B16",
           "='low-low'!C16",
           "='low-low'!D16",
@@ -1447,7 +1447,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           "='med-low'!B16",
           "='med-low'!C16",
           "='med-low'!D16",
@@ -1475,7 +1475,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           "='high-low'!B16",
           "='high-low'!C16",
           "='high-low'!D16",
@@ -1503,7 +1503,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           "='low-high'!B16",
           "='low-high'!C16",
           "='low-high'!D16",
@@ -1531,7 +1531,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           "='med-high'!B16",
           "='med-high'!C16",
           "='med-high'!D16",
@@ -1559,7 +1559,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           "='high-high'!B16",
           "='high-high'!C16",
           "='high-high'!D16",
@@ -1615,7 +1615,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           "='low-low'!B21",
           "='low-low'!C21",
           "='low-low'!D21",
@@ -1643,7 +1643,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           "='med-low'!B21",
           "='med-low'!C21",
           "='med-low'!D21",
@@ -1671,7 +1671,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           "='high-low'!B21",
           "='high-low'!C21",
           "='high-low'!D21",
@@ -1699,7 +1699,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           "='low-high'!B21",
           "='low-high'!C21",
           "='low-high'!D21",
@@ -1727,7 +1727,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           "='med-high'!B21",
           "='med-high'!C21",
           "='med-high'!D21",
@@ -1755,7 +1755,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           "='high-high'!B21",
           "='high-high'!C21",
           "='high-high'!D21",
@@ -1811,7 +1811,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           "='low-low'!B27",
           "='low-low'!C27",
           "='low-low'!D27",
@@ -1839,7 +1839,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           "='med-low'!B27",
           "='med-low'!C27",
           "='med-low'!D27",
@@ -1867,7 +1867,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           "='high-low'!B27",
           "='high-low'!C27",
           "='high-low'!D27",
@@ -1895,7 +1895,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           "='low-high'!B27",
           "='low-high'!C27",
           "='low-high'!D27",
@@ -1923,7 +1923,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           "='med-high'!B27",
           "='med-high'!C27",
           "='med-high'!D27",
@@ -1951,7 +1951,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           "='high-high'!B27",
           "='high-high'!C27",
           "='high-high'!D27",
@@ -2007,7 +2007,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           "='low-low'!B24",
           "='low-low'!C24",
           "='low-low'!D24",
@@ -2035,7 +2035,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           "='med-low'!B24",
           "='med-low'!C24",
           "='med-low'!D24",
@@ -2063,7 +2063,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           "='high-low'!B24",
           "='high-low'!C24",
           "='high-low'!D24",
@@ -2091,7 +2091,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           "='low-high'!B24",
           "='low-high'!C24",
           "='low-high'!D24",
@@ -2119,7 +2119,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           "='med-high'!B24",
           "='med-high'!C24",
           "='med-high'!D24",
@@ -2147,7 +2147,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           "='high-high'!B24",
           "='high-high'!C24",
           "='high-high'!D24",
@@ -2203,7 +2203,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           "='low-low'!B29",
           "='low-low'!C29",
           "='low-low'!D29",
@@ -2231,7 +2231,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           "='med-low'!B29",
           "='med-low'!C29",
           "='med-low'!D29",
@@ -2259,7 +2259,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           "='high-low'!B29",
           "='high-low'!C29",
           "='high-low'!D29",
@@ -2287,7 +2287,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           "='low-high'!B29",
           "='low-high'!C29",
           "='low-high'!D29",
@@ -2315,7 +2315,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           "='med-high'!B29",
           "='med-high'!C29",
           "='med-high'!D29",
@@ -2343,7 +2343,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           "='high-high'!B29",
           "='high-high'!C29",
           "='high-high'!D29",
@@ -3311,32 +3311,32 @@
           "Net Fiscal Impact Change"
         ],
         [
-          "Low impact (12% displacement); \nLow market power",
+          "Low impact (12% displacement); \nHigh domestic value capture",
           "=(summary!M31-total_tax*10)/(total_tax*10)",
           "=(summary!M45-summary!$B45*10)/(summary!$B45*10)"
         ],
         [
-          "Med impact (30% displacement);\nLow market power",
+          "Med impact (30% displacement);\nHigh domestic value capture",
           "=(summary!M32-total_tax*10)/(total_tax*10)",
           "=(summary!M46-summary!$B46*10)/(summary!$B46*10)"
         ],
         [
-          "High impact (48% displacement);\nLow market power",
+          "High impact (48% displacement);\nHigh domestic value capture",
           "=(summary!M33-total_tax*10)/(total_tax*10)",
           "=(summary!M47-summary!$B47*10)/(summary!$B47*10)"
         ],
         [
-          "Low impact (12% displacement);\nHigh market power",
+          "Low impact (12% displacement);\nLow domestic value capture",
           "=(summary!M34-total_tax*10)/(total_tax*10)",
           "=(summary!M48-summary!$B48*10)/(summary!$B48*10)"
         ],
         [
-          "Med impact (30% displacement); \nHigh market power",
+          "Med impact (30% displacement); \nLow domestic value capture",
           "=(summary!M35-total_tax*10)/(total_tax*10)",
           "=(summary!M49-summary!$B49*10)/(summary!$B49*10)"
         ],
         [
-          "High impact (48% displacement); \nHigh market power",
+          "High impact (48% displacement); \nLow domestic value capture",
           "=(summary!M36-total_tax*10)/(total_tax*10)",
           "=(summary!M50-summary!$B50*10)/(summary!$B50*10)"
         ],
@@ -3736,7 +3736,7 @@
           null
         ],
         [
-          "Scenario labour tax (total) - low market power",
+          "Scenario labour tax (total) - high domestic value capture",
           null,
           null,
           null,
@@ -3848,7 +3848,7 @@
           null
         ],
         [
-          "Scenario labour tax (total) - high market power",
+          "Scenario labour tax (total) - low domestic value capture",
           null,
           null,
           null,
@@ -3960,7 +3960,7 @@
           null
         ],
         [
-          "Scenario capital income tax (total) - low market power",
+          "Scenario capital income tax (total) - high domestic value capture",
           null,
           null,
           null,
@@ -4072,7 +4072,7 @@
           null
         ],
         [
-          "Scenario capital income tax (total) - high market power",
+          "Scenario capital income tax (total) - low domestic value capture",
           null,
           null,
           null,
@@ -4184,7 +4184,7 @@
           null
         ],
         [
-          "Scenario consumption tax (total) - low market power",
+          "Scenario consumption tax (total) - high domestic value capture",
           null,
           null,
           null,
@@ -4296,7 +4296,7 @@
           null
         ],
         [
-          "Scenario consumption tax (total) - high market power",
+          "Scenario consumption tax (total) - low domestic value capture",
           null,
           null,
           null,
@@ -4408,7 +4408,7 @@
           null
         ],
         [
-          "Total tax revenue (after AI shock) - low market power",
+          "Total tax revenue (after AI shock) - high domestic value capture",
           null,
           null,
           null,
@@ -4520,7 +4520,7 @@
           null
         ],
         [
-          "Total tax revenue (after AI shock) - high market power",
+          "Total tax revenue (after AI shock) - low domestic value capture",
           null,
           null,
           null,
@@ -4632,7 +4632,7 @@
           null
         ],
         [
-          "Net fiscal impact due to AI shock - low market power",
+          "Net fiscal impact due to AI shock - high domestic value capture",
           null,
           null,
           null,
@@ -4744,7 +4744,7 @@
           null
         ],
         [
-          "Net fiscal impact due to AI shock - high market power",
+          "Net fiscal impact due to AI shock - low domestic value capture",
           null,
           null,
           null,
@@ -30846,7 +30846,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "Low Impact/Low Market Power",
+          "Low Impact/High Domestic Value Capture",
           null,
           null,
           null,
@@ -31767,7 +31767,7 @@
       "maxCol": 16,
       "cells": [
         [
-          "Medium Impact/Low Market Power",
+          "Medium Impact/High Domestic Value Capture",
           null,
           null,
           null,
@@ -32871,7 +32871,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "High Impact/Low Market Power",
+          "High Impact/High Domestic Value Capture",
           null,
           null,
           null,
@@ -33792,7 +33792,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "Low Impact/High Market Power",
+          "Low Impact/Low Domestic Value Capture",
           null,
           null,
           null,
@@ -34713,7 +34713,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "Medium Impact/High Market Power",
+          "Medium Impact/Low Domestic Value Capture",
           null,
           null,
           null,
@@ -35634,7 +35634,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "High Impact/High Market Power",
+          "High Impact/Low Domestic Value Capture",
           null,
           null,
           null,
@@ -36874,8 +36874,8 @@
         [
           "Allocation of displaced wages",
           null,
-          "low market power",
-          "high market power",
+          "high domestic value capture",
+          "low domestic value capture",
           null,
           null,
           null,
@@ -37745,7 +37745,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           46.1,
           42.01908615,
           42.01908615,
@@ -37773,7 +37773,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           46.1,
           35.89771538,
           35.89771538,
@@ -37801,7 +37801,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           46.1,
           29.77634462,
           29.77634462,
@@ -37829,7 +37829,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           46.1,
           42.01908615,
           42.01908615,
@@ -37857,7 +37857,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           46.1,
           35.89771538,
           35.89771538,
@@ -37885,7 +37885,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           46.1,
           29.77634462,
           29.77634462,
@@ -37941,7 +37941,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           13.75,
           15.45428154,
           15.45428154,
@@ -37969,7 +37969,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           13.75,
           18.01070385,
           18.01070385,
@@ -37997,7 +37997,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           13.75,
           20.56712615,
           20.56712615,
@@ -38025,7 +38025,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           13.75,
           14.31809385,
           14.31809385,
@@ -38053,7 +38053,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           13.75,
           15.17023462,
           15.17023462,
@@ -38081,7 +38081,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           13.75,
           16.02237538,
           16.02237538,
@@ -38137,7 +38137,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           31.2,
           31.54061538,
           31.54061538,
@@ -38165,7 +38165,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           31.2,
           32.05153846,
           32.05153846,
@@ -38193,7 +38193,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           31.2,
           32.56246154,
           32.56246154,
@@ -38221,7 +38221,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           31.2,
           30.68953846,
           30.68953846,
@@ -38249,7 +38249,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           31.2,
           29.92384615,
           29.92384615,
@@ -38277,7 +38277,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           31.2,
           29.15815385,
           29.15815385,
@@ -38333,7 +38333,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           100,
           97.96398308,
           97.96398308,
@@ -38361,7 +38361,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           100,
           94.90995769,
           94.90995769,
@@ -38389,7 +38389,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           100,
           91.85593231,
           91.85593231,
@@ -38417,7 +38417,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           100,
           95.97671846,
           95.97671846,
@@ -38445,7 +38445,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           100,
           89.94179615,
           89.94179615,
@@ -38473,7 +38473,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           100,
           83.90687385,
           83.90687385,
@@ -38529,7 +38529,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           0,
           5.106461538,
           5.106461538,
@@ -38557,7 +38557,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           0,
           11.34769231,
           11.34769231,
@@ -38585,7 +38585,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           0,
           15.88676923,
           15.88676923,
@@ -38613,7 +38613,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           0,
           5.106461538,
           5.106461538,
@@ -38641,7 +38641,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           0,
           11.34769231,
           11.34769231,
@@ -38669,7 +38669,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           0,
           15.88676923,
           15.88676923,
@@ -38725,7 +38725,7 @@
           null
         ],
         [
-          "Low impact/low market power",
+          "Low impact/high domestic value capture",
           100,
           92.85752154,
           92.85752154,
@@ -38753,7 +38753,7 @@
           null
         ],
         [
-          "Medium impact/low market power",
+          "Medium impact/high domestic value capture",
           100,
           83.56226538,
           83.56226538,
@@ -38781,7 +38781,7 @@
           null
         ],
         [
-          "High impact/low market power",
+          "High impact/high domestic value capture",
           100,
           75.96916308,
           75.96916308,
@@ -38809,7 +38809,7 @@
           null
         ],
         [
-          "Low impact/high market power",
+          "Low impact/low domestic value capture",
           100,
           90.87025692,
           90.87025692,
@@ -38837,7 +38837,7 @@
           null
         ],
         [
-          "Medium impact/high market power",
+          "Medium impact/low domestic value capture",
           100,
           78.59410385,
           78.59410385,
@@ -38865,7 +38865,7 @@
           null
         ],
         [
-          "High impact/high market power",
+          "High impact/low domestic value capture",
           100,
           68.02010462,
           68.02010462,
@@ -39833,32 +39833,32 @@
           "Net Fiscal Impact Change"
         ],
         [
-          "Low impact (12% displacement); \nLow market power",
+          "Low impact (12% displacement); \nHigh domestic value capture",
           0.002018686154,
           -0.008194236923
         ],
         [
-          "Med impact (30% displacement);\nLow market power",
+          "Med impact (30% displacement);\nHigh domestic value capture",
           -0.02773469231,
           -0.08447315385
         ],
         [
-          "High impact (48% displacement);\nLow market power",
+          "High impact (48% displacement);\nHigh domestic value capture",
           -0.07322329846,
           -0.2003174523
         ],
         [
-          "Low impact (12% displacement);\nHigh market power",
+          "Low impact (12% displacement);\nLow domestic value capture",
           -0.01785396,
           -0.02806688308
         ],
         [
-          "Med impact (30% displacement); \nHigh market power",
+          "Med impact (30% displacement); \nLow domestic value capture",
           -0.07741630769,
           -0.1341547692
         ],
         [
-          "High impact (48% displacement); \nHigh market power",
+          "High impact (48% displacement); \nLow domestic value capture",
           -0.1527138831,
           -0.2798080369
         ],
@@ -40258,7 +40258,7 @@
           null
         ],
         [
-          "Scenario labour tax (total) - low market power",
+          "Scenario labour tax (total) - high domestic value capture",
           null,
           null,
           null,
@@ -40370,7 +40370,7 @@
           null
         ],
         [
-          "Scenario labour tax (total) - high market power",
+          "Scenario labour tax (total) - low domestic value capture",
           null,
           null,
           null,
@@ -40482,7 +40482,7 @@
           null
         ],
         [
-          "Scenario capital income tax (total) - low market power",
+          "Scenario capital income tax (total) - high domestic value capture",
           null,
           null,
           null,
@@ -40594,7 +40594,7 @@
           null
         ],
         [
-          "Scenario capital income tax (total) - high market power",
+          "Scenario capital income tax (total) - low domestic value capture",
           null,
           null,
           null,
@@ -40706,7 +40706,7 @@
           null
         ],
         [
-          "Scenario consumption tax (total) - low market power",
+          "Scenario consumption tax (total) - high domestic value capture",
           null,
           null,
           null,
@@ -40818,7 +40818,7 @@
           null
         ],
         [
-          "Scenario consumption tax (total) - high market power",
+          "Scenario consumption tax (total) - low domestic value capture",
           null,
           null,
           null,
@@ -40930,7 +40930,7 @@
           null
         ],
         [
-          "Total tax revenue (after AI shock) - low market power",
+          "Total tax revenue (after AI shock) - high domestic value capture",
           null,
           null,
           null,
@@ -41042,7 +41042,7 @@
           null
         ],
         [
-          "Total tax revenue (after AI shock) - high market power",
+          "Total tax revenue (after AI shock) - low domestic value capture",
           null,
           null,
           null,
@@ -41154,7 +41154,7 @@
           null
         ],
         [
-          "Net fiscal impact due to AI shock - low market power",
+          "Net fiscal impact due to AI shock - high domestic value capture",
           null,
           null,
           null,
@@ -41266,7 +41266,7 @@
           null
         ],
         [
-          "Net fiscal impact due to AI shock - high market power",
+          "Net fiscal impact due to AI shock - low domestic value capture",
           null,
           null,
           null,
@@ -67368,7 +67368,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "Low Impact/Low Market Power",
+          "Low Impact/High Domestic Value Capture",
           null,
           null,
           null,
@@ -68289,7 +68289,7 @@
       "maxCol": 16,
       "cells": [
         [
-          "Medium Impact/Low Market Power",
+          "Medium Impact/High Domestic Value Capture",
           null,
           null,
           null,
@@ -69393,7 +69393,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "High Impact/Low Market Power",
+          "High Impact/High Domestic Value Capture",
           null,
           null,
           null,
@@ -70314,7 +70314,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "Low Impact/High Market Power",
+          "Low Impact/Low Domestic Value Capture",
           null,
           null,
           null,
@@ -71235,7 +71235,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "Medium Impact/High Market Power",
+          "Medium Impact/Low Domestic Value Capture",
           null,
           null,
           null,
@@ -72156,7 +72156,7 @@
       "maxCol": 13,
       "cells": [
         [
-          "High Impact/High Market Power",
+          "High Impact/Low Domestic Value Capture",
           null,
           null,
           null,
@@ -73316,7 +73316,7 @@
         "sheet": "assumptions",
         "sheetCell": "C23",
         "group": "Core Drivers",
-        "label": "Domestic share (low market power)",
+        "label": "Domestic share (high domestic value capture)",
         "variable": "domestic_share_low/high",
         "additionalInfo": null,
         "editable": true,
@@ -73331,7 +73331,7 @@
         "sheet": "assumptions",
         "sheetCell": "D23",
         "group": "Core Drivers",
-        "label": "Domestic share (high market power)",
+        "label": "Domestic share (low domestic value capture)",
         "variable": "domestic_share_low/high",
         "additionalInfo": null,
         "editable": true,
@@ -73346,7 +73346,7 @@
         "sheet": "assumptions",
         "sheetCell": "C24",
         "group": "Core Drivers",
-        "label": "Consumer share (low market power)",
+        "label": "Consumer share (high domestic value capture)",
         "variable": "consumer_share_low/high",
         "additionalInfo": null,
         "editable": true,
@@ -73361,7 +73361,7 @@
         "sheet": "assumptions",
         "sheetCell": "D24",
         "group": "Core Drivers",
-        "label": "Consumer share (high market power)",
+        "label": "Consumer share (low domestic value capture)",
         "variable": "consumer_share_low/high",
         "additionalInfo": null,
         "editable": true,
@@ -73376,7 +73376,7 @@
         "sheet": "assumptions",
         "sheetCell": "C25",
         "group": "Core Drivers",
-        "label": "Foreign firms and operating costs (low market power)",
+        "label": "Foreign firms and operating costs (high domestic value capture)",
         "variable": "foreign_share_low/high",
         "additionalInfo": null,
         "editable": true,
@@ -73391,7 +73391,7 @@
         "sheet": "assumptions",
         "sheetCell": "D25",
         "group": "Core Drivers",
-        "label": "Foreign firms and operating costs (high market power)",
+        "label": "Foreign firms and operating costs (low domestic value capture)",
         "variable": "foreign_share_low/high",
         "additionalInfo": null,
         "editable": true,
@@ -73720,12 +73720,12 @@
         "startRow": 10,
         "endRow": 15,
         "rowLabels": [
-          "Low impact/low market power",
-          "Medium impact/low market power",
-          "High impact/low market power",
-          "Low impact/high market power",
-          "Medium impact/high market power",
-          "High impact/high market power"
+          "Low impact/high domestic value capture",
+          "Medium impact/high domestic value capture",
+          "High impact/high domestic value capture",
+          "Low impact/low domestic value capture",
+          "Medium impact/low domestic value capture",
+          "High impact/low domestic value capture"
         ]
       },
       {
@@ -73733,12 +73733,12 @@
         "startRow": 17,
         "endRow": 22,
         "rowLabels": [
-          "Low impact/low market power",
-          "Medium impact/low market power",
-          "High impact/low market power",
-          "Low impact/high market power",
-          "Medium impact/high market power",
-          "High impact/high market power"
+          "Low impact/high domestic value capture",
+          "Medium impact/high domestic value capture",
+          "High impact/high domestic value capture",
+          "Low impact/low domestic value capture",
+          "Medium impact/low domestic value capture",
+          "High impact/low domestic value capture"
         ]
       },
       {
@@ -73746,12 +73746,12 @@
         "startRow": 24,
         "endRow": 29,
         "rowLabels": [
-          "Low impact/low market power",
-          "Medium impact/low market power",
-          "High impact/low market power",
-          "Low impact/high market power",
-          "Medium impact/high market power",
-          "High impact/high market power"
+          "Low impact/high domestic value capture",
+          "Medium impact/high domestic value capture",
+          "High impact/high domestic value capture",
+          "Low impact/low domestic value capture",
+          "Medium impact/low domestic value capture",
+          "High impact/low domestic value capture"
         ]
       },
       {
@@ -73759,12 +73759,12 @@
         "startRow": 31,
         "endRow": 36,
         "rowLabels": [
-          "Low impact/low market power",
-          "Medium impact/low market power",
-          "High impact/low market power",
-          "Low impact/high market power",
-          "Medium impact/high market power",
-          "High impact/high market power"
+          "Low impact/high domestic value capture",
+          "Medium impact/high domestic value capture",
+          "High impact/high domestic value capture",
+          "Low impact/low domestic value capture",
+          "Medium impact/low domestic value capture",
+          "High impact/low domestic value capture"
         ]
       },
       {
@@ -73772,12 +73772,12 @@
         "startRow": 38,
         "endRow": 43,
         "rowLabels": [
-          "Low impact/low market power",
-          "Medium impact/low market power",
-          "High impact/low market power",
-          "Low impact/high market power",
-          "Medium impact/high market power",
-          "High impact/high market power"
+          "Low impact/high domestic value capture",
+          "Medium impact/high domestic value capture",
+          "High impact/high domestic value capture",
+          "Low impact/low domestic value capture",
+          "Medium impact/low domestic value capture",
+          "High impact/low domestic value capture"
         ]
       },
       {
@@ -73785,12 +73785,12 @@
         "startRow": 45,
         "endRow": 50,
         "rowLabels": [
-          "Low impact/low market power",
-          "Medium impact/low market power",
-          "High impact/low market power",
-          "Low impact/high market power",
-          "Medium impact/high market power",
-          "High impact/high market power"
+          "Low impact/high domestic value capture",
+          "Medium impact/high domestic value capture",
+          "High impact/high domestic value capture",
+          "Low impact/low domestic value capture",
+          "Medium impact/low domestic value capture",
+          "High impact/low domestic value capture"
         ]
       }
     ]
